@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" type="text/css" href="css/shows.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id = 'navbar'>
+        <a href = 'index.html'><img id = 'home-icon' src = 'imgs/home-icon.png'  width="50" height="50" > </a>
+        <a href = 'shows.html'>Shows</a>
+        <a href = 'watchlist.html'>Watchlist</a>
+        <a href = 'moments.html'>Moments</a>
+    </div>
+    <div id = 'big-box'>
+        <div class = 'show-box'>
+            <table class = show-list>
+                <tr>
+                    <td>86</td>
+                    <td>
+                        <div class = 'star5'> f</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ace of Diamond</td>
+                </tr>
+                <tr>
+                    <td>Demon Slayer</td>
+                </tr>
+                <tr>
+                    <td>Apothecary Diaries</td>
+                </tr>
+                <tr>
+                    <td>Queen of Tears</td>
+                </tr>
+                <tr>
+                    <td>Classroom of the Elite</td>
+                </tr>
+                <tr>
+                    <td>Jujutsu Kaisen</td>
+                    
+                </tr>
+                <tr>
+                    <td>Snow White with the Red Hair</td>
+                </tr>
+
+            </table>
+        </div>
+        <div id = 'right-panel'>
+            <div class = 'box-container'>
+                <span class = 'box-title'>Add</span>
+                <div id = 'right-box1' class = 'right-box' >
+                    <form id = 'review'>
+                        <div class = 'form-row'>
+                            <label for="title">Title: </label>
+                            <input type = "text" name = "title" minlength="1" required class = 'fill'>
+                        </div>
+                        <div class = 'form-row'>
+                            <p>Rating: </p> 
+                            <div class = 'stars'></div>
+                        </div>
+                        <div class = 'form-row'>
+                            <label for="note">Notes: </label><br>
+                            <textarea id = 'note' name = 'note' required rows = "6" class = 'fill'> </textarea>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class = 'box-container'>
+                <span class = 'box-title'>Favorites</span>
+                <div id = 'right-box2' class = 'right-box'> </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
