@@ -1,4 +1,6 @@
 var form = document.getElementById("review")
+var showTable = document.getElementById('show-list');
+
 var numStars = 0;
 
 var stars = document.querySelectorAll("#star-rating .fa-star");
@@ -22,18 +24,25 @@ form.addEventListener("submit", function(event){
 })
 
 function addShow(title, notes, stars){
-    var showTable = document.getElementById('show-list');
-
+    
     var newRow = showTable.insertRow();
     var newStars =  ' ';
     for (let i = 0; i < numStars; i++){
         newStars += '<i class="fa fa-star"></i>';
     }
     newRow.innerHTML += `
+        <td><i class="fa-solid fa-x remove" onclick = "removeShow(this)"></i></td>
         <td>${title}</td>
         <td><div class = 'unchanging-stars stars'>${newStars}<\div></td>
     `
 }
+
+function removeShow(cellObj){
+    var rowObj = cellObj.closest('tr');
+    showTable.deleteRow(rowObj.rowIndex);
+}
+
+
 function resetStarReview(){
     stars.forEach(i=>{i.style.color = "#AFAFAF"});
 }

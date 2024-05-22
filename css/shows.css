@@ -46,9 +46,11 @@ body{
 }
 #show-list{
     font-size: 20px;
-    margin: 30px 10px;
+    margin: 30px 20px;
     width:100%;
-    
+}
+#show-list tr{
+    height:5vh;
 }
 #show-list td{
     height: 5vh;
@@ -56,18 +58,27 @@ body{
 #show-list td:last-child{
     padding: 0 30px;
 }
-#show-list td:first-child{
-    padding: 0 30px;
+#show-list td:nth-child(2){
     max-width:25vw;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+#show-list td:first-child{
+    padding: 0 10px;
+    font-size: 15px;
+    color:#AFAFAF;
+    opacity:0;
+}
 
 #show-list tr:hover{
     background-color: #E5E5E5;
 }
-
+#show-list td:first-child:hover, td:first-child:hover ~ td{
+    background-color: #e58686;
+    color:#000000;
+    opacity: 1;
+}
 .stars{
     color:#fbc36e;
     font-size: 25px;
@@ -127,7 +138,7 @@ form{
 .form-row:nth-child(2){
     display:flex;
     align-items: center;
-    padding: 3vh 0;
+    padding: 1vh 0;
 }
 .form-row:first-child{
     display: flex;
