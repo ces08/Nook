@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel = "stylesheet" type="text/css" href="css/shows.css" /> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b029c67e2c.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div id = 'navbar'>
@@ -16,56 +17,177 @@
     </div>
     <div id = 'big-box'>
         <div class = 'show-box'>
-            <table class = show-list>
+            <table id = 'show-list'>
                 <tr>
                     <td>86</td>
                     <td>
-                        <div class = 'star5'> f</div>
+                        <div class = 'unchanging-stars stars'>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td>Ace of Diamond</td>
+                    <td>
+                        <div class = 'unchanging-stars stars'>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>Demon Slayer</td>
+                    <td>
+                        <div class = 'unchanging-stars stars'>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>Apothecary Diaries</td>
+                    <td>
+                        <div class = 'unchanging-stars stars'>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Queen of Tears</td>
+                    <td>Anohana</td>
+                    <td>
+                        <div class = 'unchanging-stars stars'>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Erased</td>
+                    <td>
+                        <div class = 'unchanging-stars stars'>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>Classroom of the Elite</td>
+                    <td>
+                        <div class = 'unchanging-stars stars'>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>Jujutsu Kaisen</td>
+                    <td>
+                        <div class = 'unchanging-stars stars'> 
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </td>
                     
                 </tr>
                 <tr>
+                    <td>Skip and Loafer</td>
+                    <td>
+                        <div class = 'unchanging-stars stars'>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
                     <td>Snow White with the Red Hair</td>
+                    <td>
+                        <div class = 'unchanging-stars stars' >
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>The Reason Raeliana Ended Up in the Duke's Mansion</td>
+                    <td>
+                        <div class = 'unchanging-stars stars'>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>The Disastrous Life of Saiki K.</td>
+                    <td>
+                        <div class = 'unchanging-stars stars'>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>The Royal Tutor</td>
+                    <td>
+                        <div class = 'unchanging-stars stars'>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </td>
                 </tr>
 
             </table>
         </div>
         <div id = 'right-panel'>
             <div id = 'box1' class = 'box-container'>
-                <span id = 'add' class = 'box-title'>Add</span>
+                <button id = 'add' class = 'box-title' form = 'review' type = 'submit'>Add</button>
                 <div id = 'right-box1' class = 'right-box' >
                     <form id = 'review'>
                         <div class = 'form-row'>
-                            <label for="title">Title: </label>
-                            <input type = "text" name = "title" minlength="1" required class = 'fill'>
+                            <label for='title'>Title: </label>
+                            <input id = 'title' type = 'text' name = 'title' minlength='1' required class = 'fill'>
                         </div>
                         <div class = 'form-row'>
                             <p>Rating: </p> 
-                            <div class = 'stars'></div>
+                            <div id = 'star-rating' class = 'stars'>
+                                <i class="fa fa-star" onclick = "userStarReview(5)"></i>
+                                <i class="fa fa-star" onclick = "userStarReview(4)"></i>
+                                <i class="fa fa-star" onclick = "userStarReview(3)"></i>
+                                <i class="fa fa-star" onclick = "userStarReview(2)"></i>
+                                <i class="fa fa-star" onclick = "userStarReview(1)"></i>
+                            </div>
                         </div>
                         <div class = 'form-row'>
                             <label for="note">Notes: </label><br>
                             <textarea id = 'note' name = 'note' required rows = "3" class = 'fill'> </textarea>
                         </div>
-                        <div id = 'button-box'><button id = "add-button" type = 'submit'>+</button></div>
+                        <!-- <div id = 'button-box'><button id = "add-button" type = 'submit'>+</button></div> -->
                     </form>
                 </div>
             </div>
@@ -75,6 +197,6 @@
             </div>
         </div>
     </div>
-
+    <script src="js/shows.js"></script>
 </body>
 </html>

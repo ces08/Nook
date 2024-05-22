@@ -5,20 +5,19 @@ body{
     height:100%;
     padding:0;
     margin:0;
-}
-#navbar {
+}#navbar {
     display:flex;
     position:fixed;
-    margin: 20px 0;
+    margin: 3vh 0;
     top:0;
     left:0;
-    height: 60px;
+    height: 5vh;
 
     align-items: center;
 }
 #navbar a{
-    padding: 0 10px;
-    margin: 0 20px;
+    padding: .5vh 1vw;
+    margin: 0 10px;
     text-align: center;
     font-size: 25px;
     color: black;

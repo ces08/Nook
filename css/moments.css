@@ -3,25 +3,26 @@
 body{
     font-family: "Inter", sans-serif;
     height:100%;
-    padding:0;
-    margin:0;
 }
 #navbar {
     display:flex;
     position:fixed;
-    margin: 20px 0 20px 10px;
-
+    margin: 3vh 0;
     top:0;
-    left:0;    
-    height: 60px;
+    left:0;
+    height: 5vh;
 
     align-items: center;
 }
 #navbar a{
-    padding: 0 10px 0 10px;
-    margin: 0 20px 0 20px ;
+    padding: .5vh 1vw;
+    margin: 0 10px;
     text-align: center;
     font-size: 25px;
     color: black;
     text-decoration: none;
+}
+#navbar a:last-of-type{
+    background-color: #D2DBEC;
+    border-radius: 30px;
 }
