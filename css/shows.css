@@ -49,9 +49,7 @@ body{
     margin: 30px 20px;
     width:100%;
 }
-#show-list tr{
-    height:5vh;
-}
+
 #show-list td{
     height: 5vh;
 }
@@ -67,17 +65,20 @@ body{
 #show-list td:first-child{
     padding: 0 10px;
     font-size: 15px;
-    color:#AFAFAF;
-    opacity:0;
+    color:#d8d8d8;
 }
 
 #show-list tr:hover{
-    background-color: #E5E5E5;
+    background-color: #ebebeb;
 }
-#show-list td:first-child:hover, td:first-child:hover ~ td{
-    background-color: #e58686;
-    color:#000000;
-    opacity: 1;
+#show-list td:first-child:hover~ td, td:first-child:hover{
+    background-color: #e4e4e4;
+}
+#show-list td:first-child:hover{
+    color:#e07878;
+}
+.fa-x{
+    padding: 10px;
 }
 .stars{
     color:#fbc36e;
