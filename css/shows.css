@@ -57,6 +57,8 @@ body{
     padding: 0 30px;
 }
 #show-list td:nth-child(2){
+    display:flex;
+    align-items: center;
     max-width:25vw;
     overflow: hidden;
     white-space: nowrap;
@@ -197,6 +199,25 @@ textarea:focus{
 button:hover{
     background-color:#4d74bd;
 }
+#favorite{
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+
+    margin-top: 1vh;
+}
+#favorite button{
+    font-weight: 600;
+    padding:0;
+    margin: 0 10px;
+    background-color: transparent;
+    border:none;
+}
+#favorite button:hover{
+    text-decoration: underline;
+    color:#4d74bd
+}
+
 #review{
     display: flex;
     flex-direction: column;
@@ -219,5 +240,10 @@ button:hover{
     color: #fbc36e;
 }
 
+
+.heart-favorite{
+    height:30px;
+    margin:0 5px ;
+}
 
 

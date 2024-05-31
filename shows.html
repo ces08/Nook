@@ -20,7 +20,8 @@
             <table id = 'show-list'>
                 <tr>
                     <td><i class="fa-solid fa-x remove" onclick = "removeShow(this)"></i></td>
-                    <td>86</td>
+                    <td>86 <img class = "heart-favorite" src = "svg/heart.svg">
+                    </td>
                     <td>
                         <div class = 'unchanging-stars stars'>
                             <i class="fa fa-star"></i>
@@ -33,7 +34,7 @@
                 </tr>
                 <tr>
                     <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
-                    <td>Ace of Diamond</td>
+                    <td>Ace of Diamond </i></td>
                     <td>
                         <div class = 'unchanging-stars stars'>
                             <i class="fa fa-star"></i>
@@ -130,7 +131,7 @@
                 </tr>
                 <tr>
                      <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
-                    <td>Snow White with the Red Hair</td>
+                    <td>Snow White with the Red Hair <img class = "heart-favorite" src = "svg/heart.svg"> </td>
                     <td>
                         <div class = 'unchanging-stars stars' >
                             <i class="fa fa-star"></i>
@@ -199,6 +200,10 @@
                         <div class = 'form-row'>
                             <label for="note">Notes: </label><br>
                             <textarea id = 'note' name = 'note' required rows = "3" class = 'fill'> </textarea>
+                        </div>
+                        <div class = "form-row" id = 'favorite'> Favorite? 
+                            <button id = 'yes-button' type = "button">YES</button>
+                            <button id = 'no-button' type = "button">NO</button>
                         </div>
                         <!-- <div id = 'button-box'><button id = "add-button" type = 'submit'>+</button></div> -->
                     </form>
