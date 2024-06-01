@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
+/* PROBLEM: ELLIPSIS DOES NOT WORK, FAVORITE DOES NOT SHOW UP CONSEQUENTLY */
 body{
     font-family: "Inter", sans-serif;
     height:100%;
@@ -63,6 +63,7 @@ body{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+
 }
 #show-list td:first-child{
     padding: 0 10px;
@@ -81,6 +82,7 @@ body{
 }
 .fa-x{
     padding: 10px;
+    cursor: pointer;
 }
 .stars{
     color:#fbc36e;
@@ -195,6 +197,7 @@ textarea:focus{
 
     z-index: 1;
     grid-row:1/2;
+    cursor: pointer;
 }
 button:hover{
     background-color:#4d74bd;
@@ -212,6 +215,7 @@ button:hover{
     margin: 0 10px;
     background-color: transparent;
     border:none;
+    cursor: pointer;
 }
 #favorite button:hover{
     text-decoration: underline;

@@ -10,9 +10,12 @@ var noFavButton = document.getElementById('no-button');
 
 yesFavButton.addEventListener("click", function(event){
     favorite = true;
+    yesFavButton.style.color = '#4d74bd';
 })
 noFavButton.addEventListener("click", function(event){
     favorite = false;
+    noFavButton.style.color = '#4d74bd';
+
 })
 
 var stars = document.querySelectorAll("#star-rating .fa-star");
@@ -56,7 +59,7 @@ function removeShow(cellObj){
     showTable.deleteRow(rowObj.rowIndex);
 }
 
-
 function resetStarReview(){
     stars.forEach(i=>{i.style.color = "#AFAFAF"});
 }
+

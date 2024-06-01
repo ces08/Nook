@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+/*ellipsis not working*/
 
 
 body{
     font-family: "Inter", sans-serif;
     height:100%;
+    font-size: 20px;
+
 }
 #navbar {
     display:flex;
@@ -26,4 +29,95 @@ body{
 #navbar a:nth-of-type(3){
     background-color: #D2DBEC;
     border-radius: 30px;
+}
+#big-box{
+    display:flex;
+    width:95vw;
+    margin-left:2.5vw;
+    margin-top: 11vh;  /*5vh + 6vh*/
+    padding: 2vh 0;
+    justify-content: center;
+}
+
+#watchlist-box{
+    height:80vh;
+    width:40vw;
+    border-radius: 30px;
+}
+#recc-box{
+    margin:0 5vw;
+    background-color: #F5F5F5;
+    width:40vw;
+    border-radius: 30px;
+    
+}
+.box-grid{
+    display:grid;
+    place-items: center;
+    grid-template-rows: 50px 75vh;
+}
+.box-title{
+    color:white;
+    font-size: 25px;
+
+    padding: 10px 20px;
+    
+    background-color: #7183A5;
+    border-radius: 30px;
+
+    z-index: 1;
+    grid-row:1/2;
+}
+#check-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #EAF0FB;
+    height:100%;
+    width:90%;
+    margin-top: -40px;
+    border-radius: 30px;
+
+    overflow: hidden;
+}
+.checklist{
+    display:inline-block;
+    width:25vw;
+    justify-content: center;
+    margin: 10vh;
+
+    max-width:25vw;
+    overflow: scroll;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#mainCheckList{
+    margin-bottom: 0;
+}
+#add{
+    margin-top: 0;
+}
+li{
+    margin-bottom: 2vh;
+    border-radius: 20%;
+    cursor:pointer;
+}
+
+li:hover{
+    text-decoration: line-through;
+    color:#7183A5;
+    cursor:pointer;
+}
+#add-bullet{
+    background-color: transparent;
+    border-width: 0 0 2px 0;
+    border-color: #AFAFAF;
+    color:#AFAFAF;
+    width:80%;
+
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+}
+#add-bullet:focus{
+    outline: none;
 }
