@@ -8,10 +8,21 @@ body{
     font-size: 20px;
 
 }
+
+::-webkit-scrollbar{
+    width:10px;
+    margin:30px 0;
+
+    background:transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #AFAFAF;
+    border-radius: 30px;
+}
 #navbar {
     display:flex;
     position:fixed;
-    margin: 3vh 0;
+    margin: 2vw 2vw;
     top:0;
     left:0;
     height: 5vh;
@@ -32,11 +43,12 @@ body{
 }
 #big-box{
     display:flex;
+    justify-content: center;
+    align-items: center;
     width:95vw;
     margin-left:2.5vw;
     margin-top: 11vh;  /*5vh + 6vh*/
     padding: 2vh 0;
-    justify-content: center;
 }
 
 #watchlist-box{
@@ -46,10 +58,38 @@ body{
 }
 #recc-box{
     margin:0 5vw;
-    background-color: #F5F5F5;
     width:40vw;
     border-radius: 30px;
+}
+#recc-container{
+    display:flex;
+    justify-content: center;
+    width:90%;
+    height:100%;
     
+    margin-top:-40px;
+    border-radius: 30px;
+}
+#recc-generator{
+    display:flex;
+    justify-content: center;
+    margin: 5vw 0;
+    width:90%;
+}
+#search{
+    border: #AFAFAF 2px solid;
+    border-radius: 30px;
+    background-color: #F5F5F5;
+    
+    width:100%;
+    height:30px;
+    font-size: 20px;
+
+    padding: 5px 15px;
+    
+}
+#search:focus{
+    outline:none;
 }
 .box-grid{
     display:grid;
@@ -68,7 +108,7 @@ body{
     z-index: 1;
     grid-row:1/2;
 }
-#check-box{
+#check-box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,17 +117,16 @@ body{
     width:90%;
     margin-top: -40px;
     border-radius: 30px;
-
-    overflow: hidden;
+    overflow-x: hidden;
 }
+
 .checklist{
     display:inline-block;
     width:25vw;
     justify-content: center;
-    margin: 10vh;
+    margin: 5vw 0;
 
     max-width:25vw;
-    overflow: scroll;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
@@ -121,3 +160,4 @@ li:hover{
 #add-bullet:focus{
     outline: none;
 }
+
