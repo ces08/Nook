@@ -10,7 +10,6 @@ addBullet.addEventListener("keyup", function(event){
 })
 function removeShow(cellObj){
     checklist.removeChild(cellObj);
-
 }
 
 

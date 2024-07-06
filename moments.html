@@ -19,7 +19,7 @@
         <div id = 'smaller-box'>
             <div class = 'moment-box entry' id = "idx1" draggable="true">
                     <div class = "header">
-                        <div class = "title">Anime Name</div>
+                        <div class = "title">Jujutsu Kaisen</div>
                         <div class = "episode">(S1, Ep1)</div>
                         <i class="fa-solid fa-x remove" onclick = "removeMoment('idx1')"></i>
 
@@ -30,8 +30,8 @@
             </div>
             <div class = 'moment-box entry' id = "idx2" draggable="true">
                 <div class = "header">
-                    <div class = "title">Anime Name</div>
-                    <div class = "episode">(S1, Ep1)</div>
+                    <div class = "title">Akagami no Shirayuki Hime</div>
+                    <div class = "episode">(S2, Ep10)</div>
                     <i class="fa-solid fa-x remove" onclick = "removeMoment('idx2')"></i>
 
                 </div>
@@ -41,8 +41,8 @@
             </div>
             <div class = 'moment-box entry' id = "idx3" draggable="true">
                 <div class = "header">
-                    <div class = "title">Anime Name</div>
-                    <div class = "episode">(S1, Ep1)</div>
+                    <div class = "title">Hibike no Euphonium!</div>
+                    <div class = "episode">(S3, Ep4)</div>
                     <i class="fa-solid fa-x remove" onclick = "removeMoment('idx3')"></i>
                 </div>
                 <img class = "screenshot" src = 'imgs/euphonium.png'>
@@ -51,8 +51,8 @@
             </div>
             <div class = 'moment-box entry' id = "idx4" draggable="true">
                 <div class = "header">
-                    <div class = "title">Anime Name</div>
-                    <div class = "episode">(S1, Ep1)</div>
+                    <div class = "title">Kimetsu no Yaiba</div>
+                    <div class = "episode">(S4, Ep3)</div>
                     <i class="fa-solid fa-x remove" onclick = "removeMoment('idx4')"></i>
 
                 </div>
@@ -60,7 +60,25 @@
                 <div class = "caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </div>
                 <div class = "date">06/09/24 12:46AM</div>
             </div>
-            <div class = "moment-box" id = 'box-button'><button id = "add-moment">+</button></div>
+            
+            <form class = "moment-box" id = "pending-form" name = "pending-form">
+                <div class = "header">
+                    <input class = "title" id = "pending-title" name = "title" type = "text" placeholder = "Show Title" required class = "fill">
+                    <input class = "episode" id = "pending-episodeNum" placeholder = "S0, Ep0"> </input>
+                    <i class="fa-solid fa-x remove" onclick = "removeMoment('idx${momentCounter.length++}')"></i>
+                </div>
+                
+                <input class = "screenshot" id = "file-input" type = "file" accept= "image/png, image/jpg, image/jpeg" hidden />
+                <div class = "import-img-field" onclick = "uploadImg()" data-img= " " >
+                    <i class="fa-solid fa-image"></i>
+                    <p>Upload Your Image</p>
+                </div>
+    
+                <textarea class = "caption" id = "pending-caption" name = "caption" placeholder = "Start writing a caption..." required rows = "3"></textarea>
+                <button id = "post-button" form = "pending-form" value = "Submit">Post</button>
+            </form>
+
+             <div class = "moment-box" id = 'box-button'><button id = "add-moment">+</button></div>
         </div>
     </div>
     <script src = "js/moments.js"></script>

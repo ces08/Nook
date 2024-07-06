@@ -11,10 +11,12 @@ var noFavButton = document.getElementById('no-button');
 yesFavButton.addEventListener("click", function(event){
     favorite = true;
     yesFavButton.style.color = '#4d74bd';
+    noFavButton.style.color = 'black';
 })
 noFavButton.addEventListener("click", function(event){
     favorite = false;
     noFavButton.style.color = '#4d74bd';
+    yesFavButton.style.color = 'black';
 
 })
 
