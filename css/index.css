@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
+*{
+    --orange: #febda2;
+    --light-orange:#fef3e9;
+    --dark-orange:#F59D78;
+    --yellow: #ffd9a1;
+    --dark-yellow: #fbc36e;
+    --dark-gray: #a1a1a1;
+    --gray:#c1c1c1;
+    --light-gray:#d8d8d8;
+}
 body{
     font-family: "Inter", sans-serif;
     height:100%;
@@ -14,23 +23,29 @@ body{
     height: 5vh;
 
     align-items: center;
+    z-index:100;
 }
 #navbar a{
     padding: .5vh 1vw;
     margin: 0 10px;
     text-align: center;
     font-size: 25px;
-    color: black;
+    color: var(--dark-gray);
     text-decoration: none;
 }
+#navbar a:hover{
+    color:black;
+}
 #navbar a:first-of-type{
-    background-color: #D2DBEC;
     border-radius: 30px;
 }
+
 #big-box{
     display:flex;
     justify-content: center;
     align-items: center;
+
+    position:relative;
 
     width:100vw;
     height:100vh;
@@ -47,7 +62,7 @@ body{
 }
 #title-box h1{
     text-align: center;
-    color: #7183A5;
+    color: var(--dark-orange);
     font-size: 100px;
     font-weight:400;
     width:100%;
@@ -57,4 +72,16 @@ body{
 #title-box p{
     font-size:30px;
     margin: 0px;
+}
+.waves{
+    position:absolute;
+    top:0;
+    width:100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../svg/layered-waves.svg');
+
+    z-index:-1;
 }

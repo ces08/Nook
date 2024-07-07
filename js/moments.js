@@ -1,6 +1,7 @@
 const importField = document.querySelector(".import-img-field");
 const fileInput = document.getElementById('file-input');
 
+
 function uploadImg(){
     fileInput.click();
 }
@@ -31,6 +32,11 @@ function removeMoment(idx){
 
 const postButton = document.getElementById("post-button");
 const form = document.getElementById("pending-form");
+var draftButton = document.getElementById("add-moment");
+
+draftButton.addEventListener("click", function(){
+    form.classList.toggle("show");
+})
 
 var momentCounter = document.querySelectorAll(".moment-box.entry");
 console.log(momentCounter.length);
@@ -67,4 +73,6 @@ form.addEventListener("submit", function(event){
 
         form.insertAdjacentHTML("beforebegin", startHTML + medHTML + endHTML)
 })
+
+
 

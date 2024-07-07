@@ -10,13 +10,13 @@ var noFavButton = document.getElementById('no-button');
 
 yesFavButton.addEventListener("click", function(event){
     favorite = true;
-    yesFavButton.style.color = '#4d74bd';
-    noFavButton.style.color = 'black';
+    yesFavButton.style.color = '#F59D78';
+    noFavButton.style.color = '#a9a9a9';
 })
 noFavButton.addEventListener("click", function(event){
     favorite = false;
-    noFavButton.style.color = '#4d74bd';
-    yesFavButton.style.color = 'black';
+    noFavButton.style.color = '#F59D78';
+    yesFavButton.style.color = '#a9a9a9';
 
 })
 
@@ -62,6 +62,6 @@ function removeShow(cellObj){
 }
 
 function resetStarReview(){
-    stars.forEach(i=>{i.style.color = "#AFAFAF"});
+    stars.forEach(i=>{i.style.color = "#c1c1c1"});
 }
 

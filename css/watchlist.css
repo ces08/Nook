@@ -1,24 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 /*ellipsis not working*/
-
+*{
+    --orange: #febda2;
+    --light-orange:#fef3e9;
+    --dark-orange:#F59D78;
+    --light-yellow: #ffe3ba;
+    --yellow: #ffd9a1;
+    --dark-yellow: #fbc36e;
+    --dark-gray: #a1a1a1;
+    --gray:#c1c1c1;
+    --light-gray:#d8d8d8;
+}
 
 body{
     font-family: "Inter", sans-serif;
     height:100%;
-    font-size: 20px;
-
+    font-size:20px;
+    overflow: hidden;
 }
 
-::-webkit-scrollbar{
-    width:10px;
-    margin:30px 0;
-
-    background:transparent;
-}
-::-webkit-scrollbar-thumb {
-    background: #AFAFAF;
-    border-radius: 30px;
-}
 #navbar {
     display:flex;
     position:fixed;
@@ -34,26 +34,40 @@ body{
     margin: 0 10px;
     text-align: center;
     font-size: 25px;
-    color: black;
+    color: var(--dark-gray);
     text-decoration: none;
 }
+#navbar a:hover{
+    color:black;
+}
 #navbar a:nth-of-type(3){
-    background-color: #D2DBEC;
+    background-color: var(--yellow);
     border-radius: 30px;
+    font-weight: 500;
+    color:black;
+
 }
 #big-box{
     display:flex;
-    justify-content: center;
-    align-items: center;
     width:95vw;
-    margin-left:2.5vw;
-    margin-top: 11vh;  /*5vh + 6vh*/
+
+    justify-content: center;
+    margin: 11vh 2vw 0;
     padding: 2vh 0;
 }
-
+#smaller-box{
+    display: flex;
+    justify-content: center;
+    height:90%;
+}
 #watchlist-box{
+    display:flex;
+    align-items: end;
+    position:relative;
+
     height:80vh;
     width:40vw;
+    
     border-radius: 30px;
 }
 #recc-box{
@@ -91,33 +105,41 @@ body{
 #search:focus{
     outline:none;
 }
-.box-grid{
-    display:grid;
-    place-items: center;
-    grid-template-rows: 50px 75vh;
-}
-.box-title{
-    color:white;
-    font-size: 25px;
 
-    padding: 10px 20px;
+.tab{
+    position:absolute;
+    top:0;
+    align-items:start;
+
+    text-align: center;
+    color:black;
+
+    height: 100px;
+    width:180px;
+
+    padding:15px 0;
     
-    background-color: #7183A5;
+    background-color: var(--light-orange);
     border-radius: 30px;
+}
+#to-watch{
+    left:0;
 
-    z-index: 1;
-    grid-row:1/2;
-    z-index:3;
+}
+#in-prog{
+    left:180px;
+    background-color: lightgray;
+
 }
 #checkbox-container{
     position:relative;
-    height:100%;
-    width:90%;
+    height:90%;
+    width:100%;
 
-    background-color: #EAF0FB;
+    background-color: var(--light-orange);
     border-radius: 30px;
-    margin-top: -40px;
     overflow-x: hidden;
+    z-index:2;
 }
 #check-box {
     display: flex;
@@ -134,7 +156,7 @@ body{
     top:0;
     width:100%;
     height:5vh;
-    background:linear-gradient(to bottom, #EAF0FB 60%, transparent);
+    background:linear-gradient(to bottom, var(--light-orange) 60%, transparent);
     content:" ";
 }
 #checkbox-container::after{
@@ -142,7 +164,7 @@ body{
     bottom:0;
     width:100%;
     height:5vh;
-    background:linear-gradient(to top, #EAF0FB 60%, transparent);
+    background:linear-gradient(to top, var(--light-orange) 60%, transparent);
     content:" ";
 }
 .checklist{
@@ -169,7 +191,7 @@ li{
 
 li:hover{
     text-decoration: line-through;
-    color:#7183A5;
+    color: var(--dark-orange);
     cursor:pointer;
 }
 #add-bullet{
@@ -186,3 +208,15 @@ li:hover{
     outline: none;
 }
 
+.waves{
+    position:absolute;
+    top:0;
+    width:100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../svg/layered-waves-recc.svg');
+
+    z-index:-1;
+}
