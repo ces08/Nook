@@ -35,13 +35,14 @@ const form = document.getElementById("pending-form");
 var draftButton = document.getElementById("add-moment");
 
 draftButton.addEventListener("click", function(){
-    form.classList.toggle("show");
+    form.classList.toggle("visible");
 })
 
 var momentCounter = document.querySelectorAll(".moment-box.entry");
 console.log(momentCounter.length);
 
 form.addEventListener("submit", function(event){
+        form.classList.toggle("visible");
         event.preventDefault(); 
         const newTitle = document.getElementById("pending-title").value;
         const newEp = document.getElementById("pending-episodeNum").value;

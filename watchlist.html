@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel = "stylesheet" type="text/css" href="css/watchlist.css" /> 
+    <script src="https://kit.fontawesome.com/b029c67e2c.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div id = 'navbar'>
@@ -16,31 +18,67 @@
     <div id = 'big-box'>
         <div id = 'smaller-box'>
         <div id = "watchlist-box">
-            <div class = 'tab' id = "to-watch">To Watch</div>
-            <div id = "checkbox-container">
-                <div id = 'check-box'>
-                    <ul id = 'mainCheckList' class = 'checklist'>
-                            <li onclick = "removeShow(this)">Orange</li>
-                            <li onclick = "removeShow(this)">Blue Lock</li>
-                            <li onclick = "removeShow(this)">Konosuba</li>
-                            <li onclick = "removeShow(this)">Haikyuu</li>
-                            <li onclick = "removeShow(this)">Black Butler</li>
-                            <li onclick = "removeShow(this)">Kuroko no Basket</li>
-                            <li onclick = "removeShow(this)">Black Clover</li>
-                    </ul>
-                    <ul id = 'add' class = 'checklist'>
-                        <li><input id = "add-bullet" type = "text" placeholder = "Add a new show to watch"></li>
-                    </ul>
+            <ul id = "tabs">
+                <li id = "watch-tab" class = "active" onclick = "tabClicked(this,1)"> To Watch </li>
+                <li id = "prog-tab"onclick = "tabClicked(this,2)"> In Progress </li>
+            </ul>
+                <div id = "tab-container" class = 'tab-body'>
+                    <div id = 'towatch-container' class = 'checklist active'>
+                        <ul id = "watch-list" class = 'mainCheckList'>
+                                <li onclick = "removeWatchShow(this)">Orange</li>
+                                <li onclick = "removeWatchShow(this)">Blue Lock</li>
+                                <li onclick = "removeWatchShow(this)">Konosuba</li>
+                                <li onclick = "removeWatchShow(this)">Haikyuu</li>
+                                <li onclick = "removeWatchShow(this)">Black Butler</li>
+                                <li onclick = "removeWatchShow(this)">Kuroko no Basket</li>
+                                <li onclick = "removeWatchShow(this)">Black Clover</li>        
+                        </ul>
+                        <ul id = 'add'>
+                            <li><input id = "add-bullet-watch" class = 'add-bullet' type = "text" placeholder = "Add a new show to watch"></li>
+                        </ul>
+                    </div>
+                    <div id = 'inprog-container' class = "checklist">
+                        <ul id = "prog-list" class = 'mainCheckList'>
+                            <li onclick = "removeProgShow(this)">Apothecary Diaries</li>
+                            <li onclick = "removeProgShow(this)">Kaiju No. 9</li>
+                            <li onclick = "removeProgShow(this)">Nyon Nyon Byori</li>
+                            <li onclick = "removeProgShow(this)">Hibike Euphonium</li>           
+                        </ul>
+                        <ul id = 'add'>
+                            <li><input id = "add-bullet-prog" class = 'add-bullet' type = "text" placeholder = "Add a new show to watch"></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class = 'tab' id = "in-prog">In Progress</div>
         </div>
-        <div id = "recc-box" class = "box-grid">
+        <div id = "recc-box">
             <div class = 'box-title'>Recommendations</div>
+            <div id = "recc-generator">
+                <input id = 'search' type = 'text'/>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
             <div id = 'recc-container'>
-                <div id = "recc-generator">
-                    <input id = 'search' type = 'text'>
-                </div>
+                <ol id = 'recc-list'>
+                    <li><span>Clannad : After Story </span><input type = "checkbox"><br>
+                        This continuation of the original "Clannad" series delves deeper 
+                        into the life of Tomoya Okazaki and his struggles with love, family, 
+                        and loss. It’s renowned for its emotional depth and heart-wrenching moments.
+                    </li>
+                    <li><span>Your Lie in April</span><input type = "checkbox"><br>
+                        A piano prodigy who has lost his ability to hear the piano after his mother's 
+                        death meets a spirited violinist who helps him return to music and life. 
+                    </li>
+                    <li><span>Haikyuu!!</span><input type = "checkbox"><br>
+                        The story follows Shoyo Hinata, a determined and passionate player who aims to 
+                        become a top volleyball athlete despite his short stature. The series is known 
+                        for its dynamic animation, compelling characters, and intense matches. 
+                    </li>
+                    <li><span>Toradora</span><input type = "checkbox"><br>
+                        It's a heartwarming and humorous series that follows the story of Ryuuji Takasu 
+                        and Taiga Aisaka, two high school students who team up to help each other with 
+                        their respective crushes. 
+                    </li>
+                </ul>
             </div>
         </div>
         </div>

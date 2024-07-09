@@ -34,7 +34,7 @@ body{
     text-decoration: none;
 }
 #navbar a:hover{
-    color:black;
+    color:#808080;
 }
 #navbar a:first-of-type{
     border-radius: 30px;

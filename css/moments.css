@@ -3,12 +3,16 @@
     --orange: #febda2;
     --light-orange:#fef3e9;
     --dark-orange:#F59D78;
+    --light-yellow: #ffe3ba;
     --yellow: #ffd9a1;
     --dark-yellow: #fbc36e;
     --dark-gray: #a1a1a1;
     --gray:#c1c1c1;
     --light-gray:#d8d8d8;
 
+}
+html{
+    scroll-behavior: smooth;
 }
 body{
     font-family: "Inter", sans-serif;
@@ -41,10 +45,10 @@ body{
     z-index:100;
 }
 #navbar a:hover{
-    color:black;
+    color:#808080;
 }
 #navbar a:last-of-type{
-    background-color: var(--yellow);
+    background-color: var(--light-yellow);
     border-radius: 30px;
     color:black;
     font-weight: 500;
@@ -77,9 +81,9 @@ body{
     width: 35vw;
     height:70vh;
     padding: 30px;
-    margin-bottom: 5vw;
+    margin: 5vh 0;
 
-    row-gap: 25px;
+    row-gap: 5vh;
     font-size: 20px;
 }
 .moment-box#box-button {
@@ -88,10 +92,9 @@ body{
     background-color: transparent;
 }
 .date{
-    position:absolute;
+    position:sticky;
     bottom:0;
     right:0;
-    padding:inherit;
 
     text-align: right;
     color: #AFAFAF;
@@ -106,11 +109,10 @@ body{
 
 .episode{
     margin-left: 5px;
-    text-decoration:wavy;
     font-style: italic;
 }
 .caption{
-    height: 30%;
+    height: 25%;
     overflow-y: auto;
 }
 #add-moment{
@@ -124,11 +126,11 @@ body{
     align-items: center;
     
     border-radius: 100%;
-    border-width:0px;
+    border: none;
     background-color: var(--yellow);
 
     padding: 5vh;
-    margin: 5vh;
+    margin: 5vw;
 
     row-gap: 10px;
     width:50px;
@@ -137,7 +139,10 @@ body{
     font-weight: 800;
     font-size: 40px;
     transition: all 1s ease;
-
+}
+#add-moment a{
+    text-decoration: none;
+    color:black;
 }
 #add-moment:hover{
     transform: scale(1.3);
@@ -176,8 +181,6 @@ body{
     color:#858585;
     font-weight:500;
     cursor:pointer;
-    transition: all 1s ease;
-
 }
 .import-img-field:hover{
     color:#4e4e4e;
@@ -278,17 +281,24 @@ input.episode{
     color: black;
     cursor:pointer;
     transition: all 1s ease;
-    font-weight:600;
+    font-weight:500;
 }
 #post-button:hover{
     background-color:var(--dark-orange);
 }
 #pending-form{
     visibility:hidden;
-    transition: all .5s;
 }
-#pending-form.show{
+#pending-form.visible{
     visibility:visible;
-
 }
 
+/* .waves{
+    width:100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../svg/stacked-waves.svg');
+
+    z-index:-1;
+} */

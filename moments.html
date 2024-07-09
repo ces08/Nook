@@ -22,7 +22,6 @@
                         <div class = "title">Jujutsu Kaisen</div>
                         <div class = "episode">(S1, Ep1)</div>
                         <i class="fa-solid fa-x remove" onclick = "removeMoment('idx1')"></i>
-
                     </div>
                     <img class = "screenshot" src = 'imgs/gojo-purple.jpg'>
                     <div class = "caption">Lor ipsum decorum </div>
@@ -75,12 +74,12 @@
                 </div>
     
                 <textarea class = "caption" id = "pending-caption" name = "caption" placeholder = "Start writing a caption..." required rows = "3"></textarea>
-                <button id = "post-button" form = "pending-form" value = "Submit">Post</button>
+                <button id = "post-button" form = "pending-form" value = "Submit">POST</button>
             </form>
 
              <div class = "moment-box" id = 'box-button'></div>
         </div>
-        <button id = "add-moment">+</button>
+        <button id = "add-moment"><a href = '#pending-form'>+</a></button>
     </div>
     <div class = "waves"></div>
     <script src = "js/moments.js"></script>

@@ -10,6 +10,7 @@
     --dark-gray: #a1a1a1;
     --gray:#c1c1c1;
     --light-gray:#d8d8d8;
+    --lighter-gray:#F5F5F5;
 }
 
 body{
@@ -43,10 +44,10 @@ body{
     text-decoration: none;
 }
 #navbar a:hover{
-    color:black;
+    color:#808080;
 }
 #navbar a:nth-of-type(2){
-    background-color: var(--yellow);
+    background-color: var(--light-yellow);
     border-radius: 30px;
     color:black;
     font-weight: 500;
@@ -70,7 +71,6 @@ body{
     background-color: #F5F5F5;
     border-radius: 30px;
     overflow-x: hidden;
-    
 }
 
 #show-container::before{

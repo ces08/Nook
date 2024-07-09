@@ -1,16 +1,45 @@
-var checklist = document.getElementById("mainCheckList");
-var addBullet = document.getElementById("add-bullet");
+const watchList = document.getElementById("watch-list");
+const progList= document.getElementById("prog-list");
+const addBulletWatch = document.getElementById("add-bullet-watch");
+const addBulletProg = document.getElementById("add-bullet-prog");
 
-addBullet.addEventListener("keyup", function(event){
+addBulletWatch.addEventListener("keyup", function(event){
     if (event.key === "Enter"){
-        console.log(addBullet.value);
-        checklist.innerHTML += `
-        <li onclick = "removeShow(this)">${addBullet.value}</li>`
+        console.log(addBulletWatch.value);
+        watchList.innerHTML += `
+        <li onclick = "removeWatchShow(this)">${addBulletWatch.value}</li>`
     }
 })
-function removeShow(cellObj){
-    checklist.removeChild(cellObj);
+addBulletProg.addEventListener("keyup", function(event){
+    if (event.key === "Enter"){
+        console.log(addBulletProg.value);
+        progList.innerHTML += `
+        <li onclick = "removeProgShow(this)">${addBulletProg.value}</li>`
+    }
+})
+function removeWatchShow(cellObj){
+    watchList.removeChild(cellObj);
+}
+function removeProgShow(cellObj){
+    progList.removeChild(cellObj);
 }
 
+const tabs = document.getElementById("tabs");
+const tabItems = tabs.querySelectorAll('li');
+const checklists = document.querySelectorAll(".checklist");
+console.log(checklists);
+
+var idx = 0;
+function tabClicked(cellObj,num){
+    tabItems.forEach(li=>{
+        li.classList.remove('active');
+    })
+    cellObj.classList.add('active');
+
+    checklists.forEach(item=>{
+        item.classList.remove('active');
+    })
+    num == 1 ? document.getElementById('towatch-container').classList.add('active'):document.getElementById('inprog-container').classList.add('active');
+}
 
 
