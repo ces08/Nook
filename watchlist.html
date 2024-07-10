@@ -10,13 +10,12 @@
 </head>
 <body>
     <div id = 'navbar'>
-        <a href = 'index.html'><img id = 'home-icon' src = 'imgs/home-icon.png'  width="50" height="50" > </a>
+        <a href = 'index.html'><i class="fa-solid fa-house"></i> </a>
         <a href = 'shows.html'>Shows</a>
         <a href = 'watchlist.html'>Watchlist</a>
         <a href = 'moments.html'>Moments</a>
     </div>
     <div id = 'big-box'>
-        <div id = 'smaller-box'>
         <div id = "watchlist-box">
             <ul id = "tabs">
                 <li id = "watch-tab" class = "active" onclick = "tabClicked(this,1)"> To Watch </li>
@@ -49,7 +48,6 @@
                         </ul>
                     </div>
                 </div>
-            </div>
         </div>
         <div id = "recc-box">
             <div class = 'box-title'>Recommendations</div>
@@ -78,12 +76,17 @@
                         and Taiga Aisaka, two high school students who team up to help each other with 
                         their respective crushes. 
                     </li>
+                    <li><span>Attack on Titan</span><input type = "checkbox"><br>
+                        It's an action-packed series with a gripping storyline, deep characters, 
+                        and stunning animation. The story revolves around humanity's struggle for survival 
+                        against giant humanoid creatures known as Titans.
+                    </li>
+                    
                 </ul>
             </div>
         </div>
-        </div>
-        <divc class = "waves"></div>
     </div>
+    <div class = "waves"></div>
     <script src = "js/watchlist.js"></script>
 </body>
 </html>

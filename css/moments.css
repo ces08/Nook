@@ -55,8 +55,12 @@ body{
 }
 #big-box{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     width:95vw;
+    min-height: 100%;
+    position:relative;
+    
     margin: 11vh 2vw 0;
     padding: 2vh 0;
 
@@ -86,11 +90,7 @@ body{
     row-gap: 5vh;
     font-size: 20px;
 }
-.moment-box#box-button {
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-}
+
 .date{
     position:sticky;
     bottom:0;
@@ -99,6 +99,7 @@ body{
     text-align: right;
     color: #AFAFAF;
     font-size: 16px;
+
 }
 .header{
     display: flex;
@@ -109,6 +110,7 @@ body{
 
 .episode{
     margin-left: 5px;
+    margin-right:5%;
     font-style: italic;
 }
 .caption{
@@ -172,7 +174,6 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
     border-radius: 0;
     
     padding: 40px 0;
@@ -255,11 +256,11 @@ textarea, input:focus{
 }
 
 input.title{
-    width:20vw;
+    width:80%;
 }
 
 input.episode{
-    width:10vw;
+    width:20%;
 }
 
 #post-button{
@@ -293,12 +294,67 @@ input.episode{
     visibility:visible;
 }
 
-/* .waves{
-    width:100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-image: url('../svg/stacked-waves.svg');
 
-    z-index:-1;
-} */
+/* xL */
+@media (max-width: 1824px){
+    
+}
+/* L */
+@media (max-width: 1224px){
+    
+    
+}
+/* m */
+@media (max-width: 1100px){
+    .moment-box{
+        font-size: 18px;
+    }
+
+}
+/* s */
+@media(max-width:800px){ 
+    #smaller-box{
+        flex-direction: column;
+        align-items: center;
+        flex-wrap:nowrap;
+    }
+    .moment-box{
+        width: 70vw; 
+        max-height: 70vh;
+        height:auto;
+    }
+    #pending-form{
+        height:80vh;
+    }
+    #post-button{
+        height:40px;
+        width:120px;
+        padding:20px;
+    
+        font-size: 20px;
+    }
+    #navbar a{
+        font-size: 22px;
+    }
+    
+}
+
+/* xs */
+@media(max-width: 500px){
+    #smaller-box{
+        flex-direction: column;
+        align-items: center;
+        flex-wrap:nowrap;
+    }
+    .moment-box{
+        max-height: 60vh;
+        font-size: 16px;
+
+    }
+    #pending-form{
+        max-height:70vh;
+    }
+    #navbar a{
+        font-size: 20px;
+    }
+}

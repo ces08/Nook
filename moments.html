@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id = 'navbar'>
-        <a href = 'index.html'><img id = 'home-icon' src = 'imgs/home-icon.png'  width="50" height="50" > </a>
+        <a href = 'index.html'><i class="fa-solid fa-house"></i> </a>
         <a href = 'shows.html'>Shows</a>
         <a href = 'watchlist.html'>Watchlist</a>
         <a href = 'moments.html'>Moments</a>
@@ -64,7 +64,7 @@
                 <div class = "header">
                     <input class = "title" id = "pending-title" name = "title" type = "text" placeholder = "Show Title" required class = "fill">
                     <input class = "episode" id = "pending-episodeNum" placeholder = "S0, Ep0"> </input>
-                    <i class="fa-solid fa-x remove" onclick = "removeMoment('idx${momentCounter.length++}')"></i>
+                    <i class="fa-solid fa-x remove" onclick = "draftVisibility()"></i>
                 </div>
                 
                 <input class = "screenshot" id = "file-input" type = "file" accept= "image/png, image/jpg, image/jpeg" hidden />
@@ -77,11 +77,10 @@
                 <button id = "post-button" form = "pending-form" value = "Submit">POST</button>
             </form>
 
-             <div class = "moment-box" id = 'box-button'></div>
         </div>
         <button id = "add-moment"><a href = '#pending-form'>+</a></button>
+        <div class = "waves"> </div>
     </div>
-    <div class = "waves"></div>
     <script src = "js/moments.js"></script>
 </body>
 </html>

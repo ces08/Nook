@@ -1,5 +1,5 @@
-var form = document.getElementById("review")
-var showTable = document.getElementById('show-list');
+const form = document.getElementById("review")
+const showTable = document.getElementById('show-list');
 
 var numStars = 0;
 
@@ -43,8 +43,9 @@ form.addEventListener("submit", function(event){
     addShow(showTitle, showNotes, favorite);
 })
 
-function addShow(title, notes){
-    
+const favList = document.getElementById('favorite-list');
+
+function addShow(title, notes){  
     var newRow = showTable.insertRow();
     var newStars =  ' ';
     for (let i = 0; i < numStars; i++){
@@ -54,7 +55,13 @@ function addShow(title, notes){
         <td><i class="fa-solid fa-x remove" onclick = "removeShow(this)"></i></td>
         ${favorite? `<td>${title} <img class = "heart-favorite" src = "svg/heart.svg"> </td>` : `<td>${title}</td>`}
         <td><div class = 'unchanging-stars stars'>${newStars}<\div></td>
-    `}
+    `
+    if (favorite){
+        favList.innerHTML += `
+        <li>${title}<\li>
+        `
+    }
+}
 
 function removeShow(cellObj){
     var rowObj = cellObj.closest('tr');
@@ -65,3 +72,15 @@ function resetStarReview(){
     stars.forEach(i=>{i.style.color = "#c1c1c1"});
 }
 
+// const favListElements = favList.querySelectorAll("li");
+
+// favList.addEventListener("click",function(e){
+//     const target = e.textContent;
+//     showTable.forEach(e=>{
+//         if (e.textContent.includes(target)){
+//             showTable.scroll(function(){
+//                 target.prop("scrollTop", this.scrollTop).prop("scrollLeft", this.scrollLeft);
+//             })
+//         }
+//     })
+// })

@@ -34,12 +34,17 @@ const postButton = document.getElementById("post-button");
 const form = document.getElementById("pending-form");
 var draftButton = document.getElementById("add-moment");
 
-draftButton.addEventListener("click", function(){
+function draftVisibility(){
     form.classList.toggle("visible");
+}
+
+draftButton.addEventListener("click", function(){
+    draftVisibility();
 })
 
-var momentCounter = document.querySelectorAll(".moment-box.entry");
+const momentCounter = document.querySelectorAll(".moment-box.entry");
 console.log(momentCounter.length);
+var newIdx = momentCounter.length+1;
 
 form.addEventListener("submit", function(event){
         form.classList.toggle("visible");
@@ -48,7 +53,6 @@ form.addEventListener("submit", function(event){
         const newEp = document.getElementById("pending-episodeNum").value;
         const newImg = document.getElementById("pending-img");
         const newCaption = document.getElementById("pending-caption").value;
-        const newIdx = momentCounter.length;
     
         const date = new Date().toLocaleString("en-US");
 
@@ -72,7 +76,9 @@ form.addEventListener("submit", function(event){
         </div>
         `
 
-        form.insertAdjacentHTML("beforebegin", startHTML + medHTML + endHTML)
+        form.insertAdjacentHTML("beforebegin", startHTML + medHTML + endHTML);
+        newIdx ++;
+        console.log(newIdx);
 })
 
 

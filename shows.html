@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id = 'navbar'>
-        <a href = 'index.html'><img id = 'home-icon' src = 'imgs/home-icon.png'  width="50" height="50" > </a>
+        <a href = 'index.html'><i class="fa-solid fa-house"></i> </a>
         <a href = 'shows.html'>Shows</a>
         <a href = 'watchlist.html'>Watchlist</a>
         <a href = 'moments.html'>Moments</a>
@@ -34,7 +34,7 @@
                 </tr>
                 <tr>
                     <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
-                    <td>Ace of Diamond </i></td>
+                    <td>Ace of Diamond <img class = "heart-favorite" src = "svg/heart.svg"></i></td>
                     <td>
                         <div class = 'unchanging-stars stars'>
                             <i class="fa fa-star"></i>
@@ -211,8 +211,14 @@
                 </div>
             </div>
             <div id = 'box2' class = 'box-container'>
-                <span id = 'fav' class = 'box-title'>Favorites</span>
-                <div id = 'right-box2' class = 'right-box'> </div>
+                <div id = 'fav' class = 'box-title'>Favorites</div>
+                <div id = 'right-box2' class = 'right-box'>
+                    <ul id = "favorite-list">
+                        <li>86</li>
+                        <li>Snow White with the Red Hair</li>
+                        <li>Ace of the Diamond</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class = 'waves'> </div>
