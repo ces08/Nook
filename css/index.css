@@ -16,7 +16,7 @@ body{
     margin:0;
 }
 #navbar {
-    display:flex;
+    display: flex;
     position:fixed;
     top:0;
     left:0;
@@ -25,10 +25,12 @@ body{
     padding: 2vw 2vw;
 
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
     z-index:100;
 }
+
+
 #navbar a{
     padding: .5vh 1vw;
     margin: 0 10px;
@@ -43,6 +45,7 @@ body{
 #navbar a:first-of-type{
     border-radius: 30px;
 }
+
 
 #big-box{
     display:flex;
@@ -63,19 +66,19 @@ body{
     width:100%;
     height:100%;
 
-    padding: 0 2vw;
+    padding: 0 5vw;
     
 }
 #title-box h1{
     text-align: center;
     color: var(--dark-orange);
-    font-size: 7rem;
+    font-size: 100px;
     font-weight:400;
     width:100%;
-    margin:20px;
+    margin:1vh;
 }
 #title-box p{
-    font-size:1.8rem;
+    font-size:30px;
     margin: 0px;
     text-align: center;
 }
@@ -96,27 +99,32 @@ body{
     
 }
 /*laptops*/
-@media (max-width: 1224px){
+@media (max-width: 1024px){
     #title-box h1{
-        font-size: 5.5rem;
+        font-size: 85px;
+    }
+    #title-box p{
+        font-size: 24px;
     }
 }
 /*ipads*/
-@media(max-width:800px){ 
-    #title-box p{
-        font-size: 1.4rem;
-    }
-    #title-box h1{
-        font-size: 5rem;
-    }
+@media(max-width:768px){ 
     #navbar a{
         font-size: 22px;
+        padding: .5vh 2vw;
+        margin:0 5px;
+    }
+    #title-box p{
+        font-size: 20px;
+    }
+    #title-box h1{
+        font-size: 75px;
     }
 }
 
 
 /*phones*/
-@media(max-width: 500px){
+@media(max-width: 425px){
     #title-box p{
         font-size: 1.0rem;
     }
@@ -128,3 +136,25 @@ body{
     }
 }
 
+@media(max-width: 375px){
+    #title-box p{
+        font-size: 16px;
+    }
+    #title-box h1{
+        font-size: 60px;
+    }
+    #navbar a{
+        font-size: 18px;
+    }
+}
+@media(max-width: 320px){
+    #title-box p{
+        font-size: 16px;
+    }
+    #title-box h1{
+        font-size: 50px;
+    }
+    #navbar a{
+        margin:0 2px;
+    }
+}

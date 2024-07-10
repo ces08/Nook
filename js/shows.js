@@ -54,7 +54,10 @@ function addShow(title, notes){
     newRow.innerHTML += `
         <td><i class="fa-solid fa-x remove" onclick = "removeShow(this)"></i></td>
         ${favorite? `<td>${title} <img class = "heart-favorite" src = "svg/heart.svg"> </td>` : `<td>${title}</td>`}
-        <td><div class = 'unchanging-stars stars'>${newStars}<\div></td>
+        <td>
+            <div class = 'unchanging-stars stars'>${newStars}</div>
+            <div class = 'short-stars stars'> (${numStars}<i class="fa fa-star"></i>) </div>
+        </td>
     `
     if (favorite){
         favList.innerHTML += `
