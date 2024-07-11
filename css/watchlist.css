@@ -59,8 +59,6 @@ body{
     justify-content: center;
     margin: 11vh 0;
     padding: 2vh 0;
-
-    overflow: hidden;
 }
 
 
@@ -74,6 +72,7 @@ body{
     border-radius: 30px;
     
 }
+
 #recc-box{
     display:flex;
     flex-direction: column;
@@ -186,9 +185,8 @@ body{
     align-items: start;
     justify-content: center;
 
-    width:25vw;
-
-    max-width:25vw;
+    width:85%;
+    min-width:80%;
 
 }
 .checklist.active{
@@ -241,7 +239,38 @@ body{
 
     z-index:-1;
 }
-
+@media (min-width: 767px){
+    @media(max-height: 750px){
+        #big-box{
+            margin-top:13vh;
+        }
+    }
+    @media(max-height: 400px){
+        body{
+            font-size: 18px;
+        }
+        #big-box{
+            margin-top:15vh;
+            margin-bottom: 5vh;
+            font-size: 18px;
+        }
+        #search{
+            border-radius: 20px;
+            height:20px;
+            font-size: 18px;
+        }
+        #recc-list{
+            font-size: 16px;
+        }
+        #recc-list span{
+            font-size: 18px;
+        }
+        .box-title{
+            font-size: 20px;
+        }
+    }
+    
+}
 /* xL */
 @media (max-width: 1824px){
     
@@ -258,6 +287,9 @@ body{
     }
     #tabs li{
         width: 35%;
+    }
+    .add-bullet{
+        font-size: 18px;
     }
 }
 /* s */

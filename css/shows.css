@@ -17,8 +17,8 @@ body{
     font-family: "Inter", sans-serif;
     height:100%;
     font-size:20px;
-    overflow: hidden;
     margin:0;
+    overflow: hidden;
 }
 
 #navbar {
@@ -57,56 +57,56 @@ body{
 #big-box{
     display:flex;
     position:relative;
-    width:95vw;
+    width:100%;
+    height:100%;
 
     justify-content: center;
-    margin: 11vh 2vw 0;
+    margin: 12vh 0;
     padding: 2vh 0;
 }
+
 .show-box{
-    overflow-y: auto;
-    width:50vw;
-    height:80vh;
+    width:90%;
+    height:70vh;
     overflow-x: hidden;
+    overflow-y: auto;
+    padding:5vh 2vw;
 }
 #show-container{
-    position:relative;
-    
-    background-color: var(--lighter-gray);
-    border-radius: 30px;
-    padding:0 2vw;
-}
-
-
-#show-list{
     display: flex;
     justify-content: center;
-    font-size: 20px;
-    padding:3vh 0;
 
+    position:relative;
+    width:50vw;
+    border-radius: 30px;
+    background-color: var(--lighter-gray);
+}
+
+#show-list{
+    width:100%;
+    font-size: 20px;
 }
 
 #show-list td{
-    height: 5vh;
-}
-#show-list td:last-child{
-    padding: 0 20px;
     
+    height:5vh;
 }
-#show-list td:nth-child(2){
-    display:flex;
-    align-items: center;
-    width:30vw;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+.text{
 
+    width:30vw;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
 }
+
 #show-list td:first-child{
     font-size: 15px;
     color:var(--light-gray);
 }
-
+#show-list td:nth-child(2){
+    display:flex;
+    align-items: center;
+}
 #show-list tr:hover{
     background-color: #ebebeb;
 }
@@ -121,7 +121,7 @@ body{
 .stars{
     color:var(--dark-yellow);
     font-size: 25px;
-    gap: 10px;
+    gap: 6px;
 }
 
 .unchanging-stars{
@@ -140,8 +140,8 @@ body{
 
     margin-left: 5vw;
 }
+
 .box-container{
-    display: grid;
     place-items: center;
 }
 #box1.box-container{
@@ -154,8 +154,7 @@ body{
     display:flex;
     flex-direction: column;
     height:45%;
-    justify-content: end;
-    
+    justify-content: end;    
 }
 .right-box{
     display: flex;
@@ -176,7 +175,6 @@ body{
 }
 #right-box2{
     height: 30vh;
-
 }
 
 form{
@@ -201,7 +199,6 @@ input{
     border-width: 0 0 2px 0;
     margin-left: 10px;
     width:100%;
-    background-color: yellow;
 }
 textarea, input{
     font-size: 18px;
@@ -277,12 +274,13 @@ button:hover{
 }
 #star-rating{
     display: flex;
+    justify-content: space-evenly;
+    margin: 0 5px;
     flex-direction: row-reverse;
     font-weight:900;
     color: var(--gray);
 
     width:100%;
-    justify-content: center;
     align-items: center;
 }
 #star-rating i:hover,i:hover ~i{
@@ -295,17 +293,20 @@ button:hover{
 .heart-favorite{
     height:30px;
     margin:0 5px ;
+    vertical-align: middle;
 }
 
 #favorite-list{
-    margin:10% 5%;
+    margin:10%;
     list-style-type: none;
     overflow-x: hidden;
     overflow-y: auto;
+    padding: 0;
 
 }
 #favorite-list li{
     padding: 1vh 0;
+    margin-left:0;
 }
 #favorite-list li:hover{
     color: var(--dark-orange);
@@ -314,25 +315,104 @@ button:hover{
 
 /* ---------------------------------------------------------------------------------------------------*/
 
+@media (min-width: 767px){
+    @media(max-height: 730px){
+        body{
+            overflow-y: auto;
+        }
+        #big-box{
+            flex-direction: column;
+            align-items:center;
+            
+        }
+        #show-container{
+            margin: 2vh 0;
+            display: flex;
+            justify-content: center;
+            width:65vw;
+        }
+        
+        .show-box{
+            width:90%;
+        }
+
+        .text{
+            width:15vw;
+        }
+        #right-panel{   
+            display:flex; 
+            flex-direction: row;
+            margin: 10vh 0;
+            gap:5vw;
+        }
+        #right-box1{
+            width:35vw;
+            height: 50vh;
+        }
+        #right-box2{
+            width:35vw;
+            height: 50vh;
+        }
+    }
+    @media(max-height:600px){
+        #right-panel{   
+            margin: 5vh 0 0;
+        }
+        .right-box{
+            padding: 5vh 0;
+        }
+    }
+    @media(max-height:500px){
+        #right-box1{
+            height: 60vh;
+        }
+        #right-box2{
+            height: 60vh;
+        }
+    }
+    @media(max-height:410px){
+        #right-box1{
+            height: 80vh;
+        }
+        #right-box2{
+            height: 80vh;
+        }
+    }
+}
+
 /* xL */
-@media (max-width: 1824px){
-    
+@media (min-width: 1600px){
+    #show-list{
+        font-size: 24px;
+    }
+
+    .stars{
+        font-size: 33px;
+        gap: 12px;
+    }
+    #show-list td:first-child{
+        font-size: 24px;
+    }
+    .right-box{
+        font-size: 24px;
+    }
+    label{
+        font-size: 24px;
+    }
 }
 /* L */
 @media (max-width: 1224px){
     #show-list{
         font-size: 18px;
     }
-    #show-list td:nth-child(2){
-        width:25vw;
+    .text{
+        width:40vw;
     }
     .stars{
-        font-size: 20px;
-        gap: 8px;
+        font-size: 22px;
     }
-    
 }
-/* m */
+
 @media (max-width: 1024px){
    
     #show-list td:last-child{
@@ -349,8 +429,12 @@ button:hover{
     label{
         font-size: 18px;
     }
+    .text{
+        width:35vw;
+    }
 
 }
+
 /* s */
 @media(max-width:768px){ 
     body{
@@ -362,10 +446,7 @@ button:hover{
         padding: .5vh 2vw;
         margin:0 5px;
     }
-    #show-list td:nth-child(2){
-        width:45vw;
-    }
-    .show-box{
+    #show-container{
         width:85vw;
         overflow-x: hidden;
     }
@@ -375,6 +456,9 @@ button:hover{
     .stars{
         font-size: 25px;
         gap: 8px;
+    }
+    .text{
+        width:40vw;
     }
 
     #big-box{
@@ -438,6 +522,9 @@ button:hover{
     #show-list td:last-child{
         width:5vw;
     }
+    /* .text{
+        width:45vw;
+    } */
 
 }
 
@@ -456,7 +543,6 @@ button:hover{
     }
     #star-rating{
         font-size: 23px;
-        gap:2px;
     }
     .short-stars{
         gap:2px;
@@ -472,15 +558,17 @@ button:hover{
         font-size: 20px; 
     }
 
+    .form-row:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        line-height: 0;
+    }
     #star-rating{
         font-size: 20px;
-        gap: 5px;
     }
     .short-stars{
         gap:2px;
         font-size: 18px;
     }
-
-
-
 }
+
