@@ -3,6 +3,7 @@
     --orange: #febda2;
     --light-orange:#fef3e9;
     --dark-orange:#F59D78;
+    --red: #e07878;
     --light-yellow: #ffe3ba;
     --yellow: #ffd9a1;
     --dark-yellow: #fbc36e;
@@ -82,9 +83,9 @@ body{
     flex-direction: column;
     border-radius: 30px;
     background-color: #F5F5F5;
-    width: 35vw;
+    width: 30vw;
     height:70vh;
-    padding: 30px;
+    padding: 3vh 3vw;
     margin: 5vh 0;
 
     row-gap: 5vh;
@@ -92,14 +93,17 @@ body{
 }
 
 .date{
-    position:sticky;
+    display:flex;
+    align-items: center;
+    position:absolute;
+    padding:inherit;
+    /* padding-top:5px; */
     bottom:0;
     right:0;
 
     text-align: right;
     color: #AFAFAF;
     font-size: 16px;
-
 }
 .header{
     display: flex;
@@ -114,6 +118,7 @@ body{
 .episode{
     margin-right:5%;
     font-style: italic;
+
 }
 .caption{
     height: 25%;
@@ -318,9 +323,12 @@ input.episode{
     
 }
 /* m */
-@media (max-width: 1024px){
+@media (max-width: 1124px){
     .moment-box{
         font-size: 18px;
+    }
+    .caption{
+        height:22%;
     }
 
 }

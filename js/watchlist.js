@@ -1,5 +1,5 @@
 const watchList = document.getElementById("watch-list");
-const progList= document.getElementById("prog-list");
+const progList= document.getElementById("inprog-list");
 const addBulletWatch = document.getElementById("add-bullet-watch");
 const addBulletProg = document.getElementById("add-bullet-prog");
 

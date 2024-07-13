@@ -1,269 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel = "stylesheet" type="text/css" href="css/shows.css" /> 
-    <script src="https://kit.fontawesome.com/b029c67e2c.js" crossorigin="anonymous"></script>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel = "stylesheet" type="text/css" href="css/shows.css" />
+   <script src="https://kit.fontawesome.com/b029c67e2c.js" crossorigin="anonymous"></script>
+
 
 </head>
 <body>
-    <div id = 'navbar'>
-        <a href = 'index.html'><i class="fa-solid fa-house"></i> </a>
-        <a href = 'shows.html'>Shows</a>
-        <a href = 'watchlist.html'>Watchlist</a>
-        <a href = 'moments.html'>Moments</a>
-    </div>
-    <div id = 'big-box'>
-        <div id = "show-container">
-        <div class = 'show-box'>
-            <table id = 'show-list'>
-                <tr>
+   <div id = 'navbar'>
+       <a href = 'index.html'><i class="fa-solid fa-house"></i> </a>
+       <a href = 'shows.html'>Shows</a>
+       <a href = 'watchlist.html'>Watchlist</a>
+       <a href = 'moments.html'>Moments</a>
+   </div>
+   <div id = 'big-box'>
+       <div id = "show-container">
+       <div class = 'show-box'>
+           <table id = 'show-list'>
+               <tr>
+                   <td width = '10%'><i class="fa-solid fa-x remove" onclick = "removeShow(this)"></i></td>
+                   <td width = '60%'>
+                       <div class = 'text'>86 <i class="fa-solid fa-heart"></i></div>
+                       <div class = 'tool-tip'><span> 86 (5)</span><br>
+                           The animation is stunning, especially during the battle scenes.
+                           Definitely one of the top sci-fi shows.</div>
+                   </td>
+                   <td width = '30%'>
+                       <div class = 'unchanging-stars stars'>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                       </div>
+                       <div class = "short-stars stars">
+                           (5 <i class="fa fa-star"></i>)
+                       </div>
+                      
+                   </td>
+               </tr>
+               <tr>
+                   <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
+                   <td><div class = 'text'>Ace of Diamond <i class="fa-solid fa-heart"></i></div>
+                       <div class = 'tool-tip'><span>Ace of Diamond (5)</span><br>
+                           Great sports anime showcasing a realistic experience.</div>
+                   </td>
+                   <td>
+                       <div class = 'unchanging-stars stars'>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                       </div>
+                       <div class = "short-stars stars">
+                           (5 <i class="fa fa-star"></i>)
+                       </div>
+                   </td>
+               </tr>
+               <tr>
                     <td><i class="fa-solid fa-x remove" onclick = "removeShow(this)"></i></td>
-                    <td><div class = 'text'>86 <img class = "heart-favorite" src = "svg/heart.svg"></div></td>
-                    <td>
-                        <div class = 'unchanging-stars stars'>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class = "short-stars stars">
-                            (5 <i class="fa fa-star"></i>)
-                        </div>
-                        
-                    </td>
-                </tr>
-                <tr>
+                   <td><div class = 'text'>Demon Slayer</div>
+                       <div class = 'tool-tip'> <span>Demon Slayer (5)</span> <br>
+                           Every fight scene is a work of art.</div>
+                   </td>
+                   <td>
+                       <div class = 'unchanging-stars stars'>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                       </div>
+                       <div class = "short-stars stars">
+                           (5 <i class="fa fa-star"></i>)
+                       </div>
+                   </td>
+               </tr>
+               <tr>
                     <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
-                    <td><div class = 'text'>Ace of Diamond <img class = "heart-favorite" src = "svg/heart.svg"></div></td>
-                    <td>
-                        <div class = 'unchanging-stars stars'>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class = "short-stars stars">
-                            (5 <i class="fa fa-star"></i>)
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                     <td><i class="fa-solid fa-x remove" onclick = "removeShow(this)"></i></td>
-                    <td><div class = 'text'>Demon Slayer</div></td>
-                    <td>
-                        <div class = 'unchanging-stars stars'>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class = "short-stars stars">
-                            (5 <i class="fa fa-star"></i>)
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                     <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
-                    <td><div class = 'text'>Apothecary Diaries</div></td>
-                    <td>
-                        <div class = 'unchanging-stars stars'>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class = "short-stars stars">
-                            (5 <i class="fa fa-star"></i>)
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                     <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
-                    <td><div class = 'text'>Anohana</div></td>
-                    <td>
-                        <div class = 'unchanging-stars stars'>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class = "short-stars stars">
-                            (3 <i class="fa fa-star"></i>)
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                     <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
-                    <td><div class = 'text'>Erased</div></td>
-                    <td>
-                        <div class = 'unchanging-stars stars'>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class = "short-stars stars">
-                            (3 <i class="fa fa-star"></i>)
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                     <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
-                    <td><div class = 'text'>Classroom of the Elite</div></td>
-                    <td>
-                        <div id = "4" class = 'unchanging-stars stars'>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class = "short-stars stars">
-                            (4 <i class="fa fa-star"></i>)
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                     <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
-                    <td><div class = 'text'>Jujutsu Kaisen</div></td>
-                    <td>
-                        <div class = 'unchanging-stars stars'> 
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class = "short-stars stars">
-                            (3 <i class="fa fa-star"></i>)
-                        </div>
-                    </td>
-                    
-                </tr>
-                <tr>
-                     <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
-                    <td><div class = 'text'>Skip and Loafer</div></td>
-                    <td>
-                        <div class = 'unchanging-stars stars'>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class = "short-stars stars">
-                            (4 <i class="fa fa-star"></i>)
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                     <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
-                    <td><div class = 'text'>Snow White with the Red Hair<img class = "heart-favorite" src = "svg/heart.svg"></div></td>
-                    <td>
-                        <div class = 'unchanging-stars stars' >
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class = "short-stars stars">
-                            (5 <i class="fa fa-star"></i>)
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                     <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
-                    <td><div class = 'text'>The Reason Raeliana Ended Up in the Duke's Mansion sdfhiusdhfiuhsdfihsd sdfhisd</div></td>
-                    <td>
-                        <div id = "3" class = 'unchanging-stars stars'>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class = "short-stars stars">
-                            (3 <i class="fa fa-star"></i>)
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                     <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
-                    <td><div class = 'text'>The Disastrous Life of Saiki K.</div></td>
-                    <td>
-                        <div id = "4" class = 'unchanging-stars stars'>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class = "short-stars stars">
-                            (4 <i class="fa fa-star"></i>)
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                     <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
-                    <td><div class = "text">The Royal Tutor</div></td>
-                    <td>
-                        <div id = "2" class = 'unchanging-stars stars'>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class = "short-stars stars">
-                            (2 <i class="fa fa-star"></i>)
-                        </div>
-                    </td>
-                </tr>
-
-            </table>
-        </div>
-        </div>
-        <div id = 'right-panel'>
-            <div id = 'box1' class = 'box-container'>
-                <button id = 'add' class = 'box-title' form = 'review' type = 'submit'>Add</button>
-                <div id = 'right-box1' class = 'right-box' >
-                    <form id = 'review'>
-                        <div class = 'form-row'>
-                            <label for='title'>Title: </label>
-                            <input id = 'title' type = 'text' name = 'title' minlength='1' required class = 'fill'>
-                        </div>
-                        <div class = 'form-row'>
-                            <p>Rating: </p> 
-                            <div id = 'star-rating' class = 'stars'>
-                                <i class="fa fa-star" onclick = "userStarReview(5)"></i>
-                                <i class="fa fa-star" onclick = "userStarReview(4)"></i>
-                                <i class="fa fa-star" onclick = "userStarReview(3)"></i>
-                                <i class="fa fa-star" onclick = "userStarReview(2)"></i>
-                                <i class="fa fa-star" onclick = "userStarReview(1)"></i>
-                            </div>
-                        </div>
-                        <div class = 'form-row'>
-                            <label for="note">Notes: </label><br>
-                            <textarea id = 'note' name = 'note' required rows = "3" class = 'fill'> </textarea>
-                        </div>
-                        <div class = "form-row" id = 'favorite'> Favorite? 
-                            <button id = 'yes-button' type = "button">YES</button>
-                            <button id = 'no-button' type = "button">NO</button>
-                        </div>
-                        <!-- <div id = 'button-box'><button id = "add-button" type = 'submit'>+</button></div> -->
-                    </form>
-                </div>
-            </div>
-            <div id = 'box2' class = 'box-container'>
-                <div id = 'fav' class = 'box-title'>Favorites</div>
-                <div id = 'right-box2' class = 'right-box'>
-                    <ul id = "favorite-list">
-                        <li>86</li>
-                        <li>Snow White with the Red Hair</li>
-                        <li>Ace of the Diamond</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class = 'waves'> </div>
-    </div>
-    
-    <script src="js/shows.js"></script>
+                   <td><div class = 'text'>Apothecary Diaries</div>
+                       <div class = 'tool-tip'> <span> Apothecary Diaries (5)</span> <br>
+                           The historical setting is so rich and beautiful, and the intrigue keeps you guessing. </div>
+                       </td>
+                   <td>
+                       <div class = 'unchanging-stars stars'>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                       </div>
+                       <div class = "short-stars stars">
+                           (5 <i class="fa fa-star"></i>)
+                       </div>
+                   </td>
+               </tr>
+               <tr>
+                    <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
+                   <td><div class = 'text'>Erased</div>
+                       <div class = 'tool-tip'><span>Erased (3)</span><br>
+                           Solid mystery show, plot twist was somewhat predictable but still enjoyable to watch.
+                       </div>
+                   </td>
+                   <td>
+                       <div class = 'unchanging-stars stars'>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                       </div>
+                       <div class = "short-stars stars">
+                           (3 <i class="fa fa-star"></i>)
+                       </div>
+                   </td>
+               </tr>
+               <tr>
+                    <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
+                   <td><div class = 'text'>Jujutsu Kaisen</div>
+                       <div class = 'tool-tip'><span>Jujutsu Kaisen (3)</span><br>
+                           The animation supports the hype very well. The whole concept of cursed energy
+                           and Jujutsu sorcerers is so unique and exciting.
+                       </div>
+                   </td>
+                   <td>
+                       <div class = 'unchanging-stars stars'>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                       </div>
+                       <div class = "short-stars stars">
+                           (3 <i class="fa fa-star"></i>)
+                       </div>
+                   </td>
+                  
+               </tr>
+               <tr>
+                    <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
+                   <td><div class = 'text'>Skip and Loafer</div>
+                       <div class = 'tool-tip'><span>Skip and Loafer (4)</span><br>
+                           SUCH A CUTE SHOW.
+                       </div>
+                   </td>
+                   <td>
+                       <div class = 'unchanging-stars stars'>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                       </div>
+                       <div class = "short-stars stars">
+                           (4 <i class="fa fa-star"></i>)
+                       </div>
+                   </td>
+               </tr>
+               <tr>
+                    <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
+                   <td><div class = 'text'>Snow White with the Red Hair <i class="fa-solid fa-heart"></i></div>
+                       <div class = 'tool-tip'><span>Snow White with the Red Hair (5)</span><br>
+                           The characters all hold a special place in my heart T-T.
+                       </div>
+                   </td>
+                   <td>
+                       <div class = 'unchanging-stars stars' >
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                       </div>
+                       <div class = "short-stars stars">
+                           (5 <i class="fa fa-star"></i>)
+                       </div>
+                   </td>
+               </tr>
+               <tr>
+                    <td><i class="fa-solid fa-x remove " onclick = "removeShow(this)"></i></td>
+                   <td><div class = 'text'>The Disastrous Life of Saiki K.</div>
+                       <div class = 'tool-tip'><span>The Disastrous Life of Saiki K. (4)</span><br>
+                           Stupid comedy, yet surprisingly good. Started craving coffee jelly.
+                       </div>
+                   </td>
+                   <td>
+                       <div id = "4" class = 'unchanging-stars stars'>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                       </div>
+                       <div class = "short-stars stars">
+                           (4 <i class="fa fa-star"></i>)
+                       </div>
+                   </td>
+               </tr>
+           </table>
+       </div>
+       </div>
+       <div id = 'right-panel'>
+           <div id = 'box1' class = 'box-container'>
+               <button id = 'add' class = 'box-title' form = 'review' type = 'submit'>Add</button>
+               <div id = 'right-box1' class = 'right-box' >
+                   <form id = 'review'>
+                       <div class = 'form-row'>
+                           <label for='title'>Title: </label>
+                           <input id = 'title' type = 'text' name = 'title' minlength='1' required class = 'fill'>
+                       </div>
+                       <div class = 'form-row'>
+                           <p>Rating: </p>
+                           <div id = 'star-rating' class = 'stars'>
+                               <i class="fa fa-star" onclick = "userStarReview(5)"></i>
+                               <i class="fa fa-star" onclick = "userStarReview(4)"></i>
+                               <i class="fa fa-star" onclick = "userStarReview(3)"></i>
+                               <i class="fa fa-star" onclick = "userStarReview(2)"></i>
+                               <i class="fa fa-star" onclick = "userStarReview(1)"></i>
+                           </div>
+                       </div>
+                       <div class = 'form-row'>
+                           <label for="note">Notes: </label><br>
+                           <textarea id = 'note' name = 'note' required rows = "3" class = 'fill'> </textarea>
+                       </div>
+                       <div class = "form-row" id = 'favorite'> Favorite?
+                           <button id = 'yes-button' type = "button">YES</button>
+                           <button id = 'no-button' type = "button">NO</button>
+                       </div>
+                   </form>
+               </div>
+           </div>
+           <div id = 'box2' class = 'box-container'>
+               <div id = 'fav' class = 'box-title'>Favorites</div>
+               <div id = 'right-box2' class = 'right-box'>
+                   <ul id = "favorite-list">
+                       <li>86</li>
+                       <li>Snow White with the Red Hair</li>
+                       <li>Ace of the Diamond</li>
+                   </ul>
+               </div>
+           </div>
+       </div>
+   </div>
+  
+   <script src="js/shows.js"></script>
 </body>
 </html>
+
+
+
