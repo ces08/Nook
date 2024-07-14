@@ -6,6 +6,7 @@
     --yellow: #ffd9a1;
     --dark-yellow: #fbc36e;
     --dark-gray: #a1a1a1;
+    --darker-gray:#6a6a6a;
     --gray:#c1c1c1;
     --light-gray:#d8d8d8;
 }
@@ -40,7 +41,7 @@ body{
     text-decoration: none;
 }
 #navbar a:hover{
-    color:#808080;
+    color:var(--darker-gray);
 }
 #navbar a:first-of-type{
     border-radius: 30px;
@@ -78,6 +79,7 @@ body{
     margin:1vh;
 }
 #title-box p{
+    color:var(--darker-gray);
     font-size:30px;
     margin: 0px;
     text-align: center;

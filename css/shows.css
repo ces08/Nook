@@ -8,6 +8,7 @@
     --yellow: #ffd9a1;
     --dark-yellow: #fbc36e;
     --dark-gray: #a1a1a1;
+    --darker-gray:#6a6a6a;
     --gray:#c1c1c1;
     --light-gray:#d8d8d8;
     --lighter-gray:#F5F5F5;
@@ -46,7 +47,7 @@ body{
     text-decoration: none;
 }
 #navbar a:hover{
-    color:#808080;
+    color:var(--darker-gray);
 }
 #navbar a:nth-of-type(2){
     background-color: var(--light-yellow);

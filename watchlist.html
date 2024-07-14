@@ -24,16 +24,77 @@
                 <div id = "tab-container" class = 'tab-body'>
                     <div id = 'towatch-container' class = 'checklist active'>
                         <ul id = "watch-list" class = 'mainCheckList'>
-                                <li onclick = "removeWatchShow(this)">Orange</li>
-                                <li onclick = "removeWatchShow(this)">Blue Lock</li>
-                                <li onclick = "removeWatchShow(this)">Konosuba</li>
-                                <li onclick = "removeWatchShow(this)">Haikyuu</li>
-                                <li onclick = "removeWatchShow(this)">Black Butler</li>
-                                <li onclick = "removeWatchShow(this)">Kuroko no Basket</li>
-                                <li onclick = "removeWatchShow(this)">Black Clover</li>        
+                                <li onclick = "removeWatchShow(this)">
+                                    <div class = 'title'>Dr.Stone</div>
+                                    <div class = 'tags'>
+                                        <span class = 'shonen'>Shonen</span>
+                                        <span class = 'sci-fi'>Sci-Fi</span>
+                                    </div>
+                                </li>
+
+                                <li onclick = "removeWatchShow(this)">
+                                    <div class = 'title'>Blue Lock</div>
+                                    <div class = 'tags'>
+                                        <span class = 'sports'>Sports</span>
+                                        <span class = 'action'>Action</span>
+                                    </div>
+                                </li>
+
+                                <li onclick = "removeWatchShow(this)">
+                                    <div class = 'title'>Konosuba</div>
+                                    <div class = 'tags'>
+                                        <span class = 'fantasy'>Fantasy</span>
+                                        <span class = 'isekai'>Isekai</span>
+                                    </div>
+                                </li>
+                                <li onclick = "removeWatchShow(this)">
+                                    <div class = 'title'>Haikyuu</div>
+                                    <div class = 'tags'>
+                                        <span class = 'shonen'>Shonen</span>
+                                        <span class = 'sports'>Sports</span>
+                                    </div>
+                                </li>
+                                <li onclick = "removeWatchShow(this)">
+                                    <div class = 'title'>Black Butler</div>
+                                    <div class = 'tags posted'>
+                                        <span class = 'mystery'>Mystery</span>
+                                        <span class = 'action'>Action</span>
+                                    </div>
+                                </li>
+                                <li onclick = "removeWatchShow(this)">
+                                    <div class = 'title'>Saiki K</div>
+                                    <div class = 'tags'>
+                                        <span class = 'slice-of-life'>Slice of Life</span>
+                                        <span class = 'comedy'>Comedy</span>
+                                    </div>
+                                </li>
+                                <li onclick = "removeWatchShow(this)">
+                                    <div class = 'title'>Snow White with the Red Hair</div>
+                                    <div class = 'tags'>
+                                        <span class = 'romance'>Romance</span>
+                                        <span class = 'shoujo'>Shoujo</span>
+                                    </div>
+                                </li>        
                         </ul>
                         <ul id = 'add'>
-                            <li><input id = "add-bullet-watch" class = 'add-bullet' type = "text" placeholder = "Add a new show"></li>
+                            <input id = "add-bullet-watch" class = 'add-bullet title' type = "text" placeholder = "Add a new show" >
+                            <div class = 'tags draft'>
+                                <input id = 'add-tags'type = 'text' list = 'genres'placeholder="(Enter Genre)">
+                                <datalist id="genres">
+                                    <option>Action</option>
+                                    <option>Comedy</option>
+                                    <option>Fantasy</option>
+                                    <option>Isekai</option>
+                                    <option>Mystery</option>
+                                    <option>Romance</option>
+                                    <option>Sci-Fi</option>
+                                    <option>Shoujo</option>
+                                    <option>Shonen</option>
+                                    <option>Slice-of-Life</option>
+                                    <option>Sports</option>
+    
+                                </datalist>
+                            </div>
                         </ul>
                     </div>
                     <div id = 'inprog-container' class = "checklist">
@@ -48,6 +109,7 @@
                             </li>
                         </ul>
                     </div>
+                    
                 </div>
         </div>
         <div id = 'prog-container'>
@@ -56,7 +118,7 @@
                     <div class = 'prog-widget'>
                         <div class = 'prog-header'>
                             <div class = 'release-day'>Mon</div>
-                            <div class = 'prog-x'>x</div>
+                            <i class="fa-solid fa-x"></i>
                         </div>
                         <img src = 'imgs/cardcaptorsakura.jpg'>
                         <div class = 'prog-title'>CARDCAPTOR SAKURA</div>
@@ -64,7 +126,7 @@
                     <div class = 'prog-widget'>
                         <div class = 'prog-header'>
                             <div class = 'release-day'>Sun</div>
-                            <div class = 'prog-x'>x</div>
+                            <i class="fa-solid fa-x"></i>
                         </div>
                         <img src = 'imgs/frieren.jpg'>
                         <div class = 'prog-title'>FRIEREN</div>
@@ -72,7 +134,7 @@
                     <div class = 'prog-widget'>
                         <div class = 'prog-header'>
                             <div class = 'release-day'>Fri</div>
-                            <div class = 'prog-x'>x</div>
+                            <i class="fa-solid fa-x"></i>
                         </div>
                         <img src = 'imgs/windbreaker.jpg'>
                         <div class = 'prog-title'>WIND BREAKER</div>
@@ -80,7 +142,7 @@
                     <div class = 'prog-widget'>
                         <div class = 'prog-header'>
                             <div class = 'release-day'>Mon</div>
-                            <div class = 'prog-x'>x</div>
+                            <i class="fa-solid fa-x"></i>
                         </div>
                         <img src = 'imgs/aot.webp'>
                         <div class = 'prog-title'>ATTACK ON TITAN</div>
@@ -88,7 +150,7 @@
                     <div class = 'prog-widget'>
                         <div class = 'prog-header'>
                             <div class = 'release-day'>Mon</div>
-                            <div class = 'prog-x'>x</div>
+                            <i class="fa-solid fa-x"></i>
                         </div>
                         <img src = 'imgs/blackbutler.png'>
                         <div class = 'prog-title'>BLACK BUTLER</div>
@@ -96,7 +158,7 @@
                     <div class = 'prog-widget'>
                         <div class = 'prog-header'>
                             <div class = 'release-day'>Mon</div>
-                            <div class = 'prog-x'>x</div>
+                            <i class="fa-solid fa-x"></i>
                         </div>
                         <img src = 'imgs/oshinoko.jpg'>
                         <div class = 'prog-title'>OSHI NO KO</div>
@@ -104,7 +166,15 @@
                     <div class = 'prog-widget'>
                         <div class = 'prog-header'>
                             <div class = 'release-day'>Tues</div>
-                            <div class = 'prog-x'>x</div>
+                            <i class="fa-solid fa-x"></i>
+                        </div>
+                        <img src = 'imgs/snow-white.jpg'>
+                        <div class = 'prog-title'>AKAGAMI NO SHIRAYUKI HIME</div>
+                    </div>
+                    <div class = 'prog-widget'>
+                        <div class = 'prog-header'>
+                            <div class = 'release-day'>Tues</div>
+                            <i class="fa-solid fa-x"></i>
                         </div>
                         <img src = 'imgs/snow-white.jpg'>
                         <div class = 'prog-title'>AKAGAMI NO SHIRAYUKI HIME</div>
