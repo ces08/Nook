@@ -76,7 +76,6 @@ body{
     
 }
 
-
 .fa-xmark{
     margin-left:5px;
     cursor:pointer;
@@ -202,17 +201,16 @@ body{
 #tabs li{
     display: inline-block;
     align-items: start;
-
     text-align: center;
 
-    width:25%;
-    padding: 10px;
+    padding: 10px 30px;
     margin-bottom:0;
     
     background-color: var(--lighter-gray);
     color:var(--dark-gray);
     border-radius: 15px 15px 0 0;
 }
+
 #tabs li:hover{
     background-color: #eaeaea;
     cursor:pointer;
@@ -243,9 +241,7 @@ body{
     font-size: 12px;
     text-align: center;
 }
-.title{
-    margin-right: 15px;
-}
+
 .tags.draft{
     display:flex;
     margin:0;
@@ -266,6 +262,36 @@ body{
     margin:0;
     width:200px;
 }
+#add-url{
+    margin-left: 5px;
+    width:150px;
+}
+.ytURL{
+    display:none;
+}
+.post-checkbox{
+    appearance:none;
+    position:absolute;
+    right:0;
+    width:20px;
+    height:20px;
+
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.post-checkbox::after{
+    font-family: "Font Awesome 5 Free";
+    content:"\f00c";
+    font-weight: 900;
+    display:none; 
+}
+.post-checkbox:checked::after{
+    display:block; 
+}
+#add-check{
+    cursor:pointer;
+}
 #add-tags{
     border:none;
     font-size:14px;
@@ -275,9 +301,9 @@ body{
 #add-tags.hidden{
     visibility:hidden;
 }
-#add{
+.add{
     display:flex;
-    width:50%;
+    width:95%;
     margin-top: 0;
 }
 
@@ -321,8 +347,7 @@ body{
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    max-width:95%;
-    min-width:80%;
+    width:100%;
 }
 .checklist.active{
     display: flex;
@@ -336,20 +361,24 @@ body{
     overflow-wrap: break-word;
 }
 
-
 .checklist li{
     display:flex;
     margin-bottom: 2vh;
+    width:90%;
+    position:relative;
+}
+.title{
     cursor:pointer;
-    width:95%;
+    margin-right: 15px;
 }
 
-
-.checklist li:hover{
+.title:hover{
     text-decoration: line-through;
     color: var(--dark-orange);
     cursor:pointer;
+    
 }
+
 input{
     background-color: transparent;
     border-width: 0 0 2px 0;

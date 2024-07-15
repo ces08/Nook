@@ -19,93 +19,138 @@
         <div id = "watchlist-box">
             <ul id = "tabs">
                 <li id = "watch-tab" class = "active" onclick = "tabClicked(this,1)"> To Watch </li>
-                <li id = "x-tab"onclick = "tabClicked(this,2)"> In Progress </li>
+                <li id = "inprog-tab" onclick = "tabClicked(this,2)"> In Progress </li>
+                <li id = "music-tab" onclick = "tabClicked(this,3)"> OPs </li>
             </ul>
                 <div id = "tab-container" class = 'tab-body'>
                     <div id = 'towatch-container' class = 'checklist active'>
                         <ul id = "watch-list" class = 'mainCheckList'>
-                                <li onclick = "removeWatchShow(this)">
-                                    <div class = 'title'>Dr.Stone</div>
+                                <li>
+                                    <div class = 'title' onclick = "removeWatchShow(this)">Dr.Stone</div>
                                     <div class = 'tags'>
                                         <span class = 'shonen'>Shonen</span>
                                         <span class = 'sci-fi'>Sci-Fi</span>
                                     </div>
                                 </li>
 
-                                <li onclick = "removeWatchShow(this)">
-                                    <div class = 'title'>Blue Lock</div>
+                                <li>
+                                    <div class = 'title' onclick = "removeWatchShow(this)">Blue Lock</div>
                                     <div class = 'tags'>
                                         <span class = 'sports'>Sports</span>
                                         <span class = 'action'>Action</span>
                                     </div>
                                 </li>
 
-                                <li onclick = "removeWatchShow(this)">
-                                    <div class = 'title'>Konosuba</div>
+                                <li>
+                                    <div class = 'title' onclick = "removeWatchShow(this)">Konosuba</div>
                                     <div class = 'tags'>
                                         <span class = 'fantasy'>Fantasy</span>
                                         <span class = 'isekai'>Isekai</span>
                                     </div>
                                 </li>
-                                <li onclick = "removeWatchShow(this)">
-                                    <div class = 'title'>Haikyuu</div>
+                                <li>
+                                    <div class = 'title' onclick = "removeWatchShow(this)">Haikyuu</div>
                                     <div class = 'tags'>
                                         <span class = 'shonen'>Shonen</span>
                                         <span class = 'sports'>Sports</span>
                                     </div>
                                 </li>
-                                <li onclick = "removeWatchShow(this)">
-                                    <div class = 'title'>Black Butler</div>
+                                <li>
+                                    <div class = 'title' onclick = "removeWatchShow(this)">Black Butler</div>
                                     <div class = 'tags posted'>
                                         <span class = 'mystery'>Mystery</span>
                                         <span class = 'action'>Action</span>
                                     </div>
                                 </li>
-                                <li onclick = "removeWatchShow(this)">
-                                    <div class = 'title'>Saiki K</div>
+                                <li>
+                                    <div class = 'title' onclick = "removeWatchShow(this)">Saiki K</div>
                                     <div class = 'tags'>
                                         <span class = 'slice-of-life'>Slice-of-Life</span>
                                         <span class = 'comedy'>Comedy</span>
                                     </div>
                                 </li>
-                                <li onclick = "removeWatchShow(this)">
-                                    <div class = 'title'>Snow White with the Red Hair</div>
+                                <li>
+                                    <div class = 'title' onclick = "removeWatchShow(this)">Snow White with the Red Hair</div>
                                     <div class = 'tags'>
                                         <span class = 'romance'>Romance</span>
                                         <span class = 'shoujo'>Shoujo</span>
                                     </div>
                                 </li>        
                         </ul>
-                        <ul id = 'add'>
-                            <input id = "add-bullet-watch" class = 'add-bullet title' type = "text" placeholder = "Add a new show" >
-                            <div class = 'tags draft'>
-                                <input id = 'add-tags'type = 'text' list = 'genres'placeholder="(Enter Genre)">
-                                <datalist id="genres">
-                                    <option>Action</option>
-                                    <option>Comedy</option>
-                                    <option>Fantasy</option>
-                                    <option>Isekai</option>
-                                    <option>Mystery</option>
-                                    <option>Romance</option>
-                                    <option>Sci-Fi</option>
-                                    <option>Shoujo</option>
-                                    <option>Shonen</option>
-                                    <option>Slice-of-Life</option>
-                                    <option>Sports</option>
-    
-                                </datalist>
-                            </div>
+                        <ul class = 'add'>
+                            <li> <input id = "add-bullet-watch" class = 'add-bullet title' type = "text" placeholder = "Add a new show" >
+                                <div class = 'tags draft'>
+                                    <input id = 'add-tags'type = 'text' list = 'genres'placeholder="(Enter Genre)">
+                                    <datalist id="genres">
+                                        <option>Action</option>
+                                        <option>Comedy</option>
+                                        <option>Fantasy</option>
+                                        <option>Isekai</option>
+                                        <option>Mystery</option>
+                                        <option>Romance</option>
+                                        <option>Sci-Fi</option>
+                                        <option>Shoujo</option>
+                                        <option>Shonen</option>
+                                        <option>Slice-of-Life</option>
+                                        <option>Sports</option>
+        
+                                    </datalist>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                     <div id = 'inprog-container' class = "checklist">
                         <ul id = "inprog-list" class = 'mainCheckList'>
-                            <li onclick = "removeProgShow(this)">Apothecary Diaries</li>
-                            <li onclick = "removeProgShow(this)">Kaiju No. 9</li>
-                            <li onclick = "removeProgShow(this)">Nyon Nyon Byori</li>
-                            <li onclick = "removeProgShow(this)">Hibike Euphonium</li>           
+                            <li>
+                                <div class = 'title' onclick = "removeProgShow(this)">Apothecary Diaries</div>
+                                <input class = 'post-checkbox' type = 'checkbox' disabled = 'disabled'>
+                            </li>
+                            <li>
+                                <div class = 'title' onclick = "removeProgShow(this)">Kaiju No. 9</div>
+                                <input class = 'post-checkbox' type = 'checkbox' disabled = 'disabled'>
+                            </li>
+                            <li>
+                                <div class = 'title' onclick = "removeProgShow(this)">Nyon Nyon Byori</div>
+                                <input class = 'post-checkbox' type = 'checkbox' disabled = 'disabled'>
+                            </li>
+                            <li>
+                                <div class = 'title' onclick = "removeProgShow(this)">Hibike Euphonium</div>
+                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                            </li>           
                         </ul>
-                        <ul id = 'add'>
+                        <ul class = 'add'>
                             <li><input id = "add-bullet-prog" class = 'add-bullet' type = "text" placeholder = "Add a show in progress">
+                                <input class = 'post-checkbox' type = 'checkbox'>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id = 'music-container' class = "checklist">
+                        <ul id = "music-list" class = 'mainCheckList'>
+                            <li>
+                                <div class = 'title' onclick = "removeMusic(this)"> Suzume OP</div>
+                                <div class = 'ytURL'>https://www.youtube.com/watch?v=Xs0Lxif1u9E&ab_channel=RADWIMPS</div>
+                                <input class = 'post-checkbox' type = 'checkbox' disabled = 'disabled'>
+                            </li>
+                            <li>
+                                <div class = 'title' onclick = "removeMusic(this)">Blue Bird (Naruto OP 6) </div>
+                                <div class = 'ytURL'>https://www.youtube.com/watch?v=N9LgkGBeQAc&ab_channel=Telemetrist</div>
+                                <input class = 'post-checkbox' type = 'checkbox' disabled = 'disabled'>
+                            </li>
+                            <li>
+                                <div class = 'title' onclick = "removeMusic(this)">Oshi no Ko OP 2</div> 
+                                <div class = 'ytURL'>https://www.youtube.com/watch?v=PgBvV9ofjmA</div>
+                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                            </li>
+                            <li>
+                                <div class = 'title' onclick = "removeMusic(this)">Hibike, Euphonium! OP 3</div>
+                                <div class = 'ytURL'>https://www.youtube.com/watch?v=ED66vOZg9t4&ab_channel=Crunchyroll</div>
+                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                            </li>           
+                        </ul>
+                        <ul class = 'add'>
+                            <li><input id = "add-bullet-music" class = 'add-bullet' type = "text" placeholder = "Add a show in progress">
+                                <input id = "add-url" placeholder = "YT URL" type = 'text'> 
+                                <input id = 'add-check' class = 'post-checkbox' type = 'checkbox'>
                             </li>
                         </ul>
                     </div>

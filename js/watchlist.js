@@ -1,7 +1,9 @@
 const watchList = document.getElementById("watch-list");
 const progList= document.getElementById("inprog-list");
+const musicList = document.getElementById("music-list");
 const addBulletWatch = document.getElementById("add-bullet-watch");
 const addBulletProg = document.getElementById("add-bullet-prog");
+const addBulletMusic = document.getElementById("add-bullet-music");
 
 var tagList = [];
 const tagInput = document.getElementById("add-tags");
@@ -69,12 +71,58 @@ addBulletProg.addEventListener("keyup", function(event){
         <li onclick = "removeProgShow(this)">${addBulletProg.value}</li>`
     }
 })
-function removeWatchShow(cellObj){
-    watchList.removeChild(cellObj);
+
+
+
+const addURL = document.getElementById("add-url");
+const addCheck = document.getElementById("add-check");
+const opArr = ['https://www.youtube.com/watch?v=PgBvV9ofjmA', 'https://www.youtube.com/watch?v=ED66vOZg9t4&ab_channel=Crunchyroll'];
+
+const checkboxes = document.querySelectorAll('input[type = checkbox]');
+addBulletMusic.addEventListener("keyup", function(event){
+    if (event.key === "Enter"){
+        const postBool = addCheck.checked;
+        const ytURL = addURL.value;
+        musicList.innerHTML += `
+        <li>
+            <div onclick = "removeMusic(this)">${addBulletMusic.value}</div>
+            <div class = 'ytURL'>${ytURL}</div>
+            <input class = 'post-checkbox' type = 'checkbox' ${postBool?`checked`:``} disabled = 'disabled'>
+        </li>`
+        if (postBool){
+            opArr.push(ytURL);
+            addMusic(ytURL);
+        }
+    }
+})
+
+const vidBox = document.getElementById('vid-box');
+
+function addMusic(url){
+    const startIdx = url.indexOf('watch?v=')+8;
+    const endIdx = url.indexOf('&ab_channel');
+    const alteredURL = url.substring(startIdx,endIdx);
+    vidBox.innerHTML += 
+    `<iframe class = 'vid' src="https://www.youtube.com/embed/${alteredURL}?"  
+    frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; 
+    web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
 }
-function removeProgShow(cellObj){
-    progList.removeChild(cellObj);
+
+function removeMusic(url){
+
 }
+
+
+function removeWatchShow(e){
+    e.parentElement.remove();
+}
+function removeProgShow(e){
+    e.parentElement.remove();
+}
+function removeMusic(e){
+    e.parentElement.remove();
+}
+
 
 const tabs = document.getElementById("tabs");
 const tabItems = tabs.querySelectorAll('li');
@@ -91,7 +139,15 @@ function tabClicked(cellObj,num){
     checklists.forEach(item=>{
         item.classList.remove('active');
     })
-    num == 1 ? document.getElementById('towatch-container').classList.add('active'):document.getElementById('inprog-container').classList.add('active');
+    if (num===1){
+        document.getElementById('towatch-container').classList.add('active');
+    }
+    else if (num===2){
+        document.getElementById('inprog-container').classList.add('active');
+    }
+    else{
+        document.getElementById('music-container').classList.add('active');
+    }
 }
 
 
