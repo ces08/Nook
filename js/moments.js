@@ -67,7 +67,7 @@ form.addEventListener("submit", function(event){
         `
         var medHTML = '';
         if(newImg != null){
-            medHTML = `<img class = "screenshot" src = '${newImg.src}'></img>`;
+            medHTML = `<img class = "screenshot" src = '${newImg.src}'>`;
         }
         const endHTML =
         `

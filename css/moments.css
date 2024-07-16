@@ -4,14 +4,21 @@
     --light-orange:#fef3e9;
     --dark-orange:#F59D78;
     --red: #e07878;
+
     --light-yellow: #ffe3ba;
     --yellow: #ffd9a1;
     --dark-yellow: #fbc36e;
-    --dark-gray: #a1a1a1;
-    --darker-gray:#6a6a6a;
+    --darker-gray:#5c5c5c;
+    --dark-gray: #7a7a7a;
+    --gray:#c1c1c19b;
+    --light-gray:#e3e3e3;
+    --lighter-gray:#F5F5F5;
 
-    --gray:#c1c1c1;
-    --light-gray:#d8d8d8;
+    --box-color: #FAFAFA;
+    --accent-blue: #4DC2D8;
+    --accent-green: #6AC59C;
+    --accent-orange:#FFA07A;
+    --black:#333333;
 
 }
 html{
@@ -20,6 +27,8 @@ html{
 body{
     font-family: "Inter", sans-serif;
     height:100%;
+    background-color: #F4F3F2;
+    color:var(--black);
 }
 
 #navbar {
@@ -32,7 +41,7 @@ body{
     padding: 2vw 2vw;
 
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(244, 243, 242, 0.85);
     backdrop-filter: blur(8px);
     z-index:100;
 
@@ -41,7 +50,7 @@ body{
     padding: .5vh 1vw;
     margin: 0 10px;
     text-align: center;
-    font-size: 25px;
+    font-size: 22px;
     color: var(--dark-gray);
     text-decoration: none;
 
@@ -51,10 +60,11 @@ body{
     color:var(--darker-gray);
 }
 #navbar a:last-of-type{
-    background-color: var(--light-yellow);
+    background-color: var(--accent-blue);
     border-radius: 30px;
-    color:black;
+    color:var(--box-color);
     font-weight: 500;
+    box-shadow: 0 2px 5px var(--gray);
 }
 #big-box{
     display: flex;
@@ -84,14 +94,16 @@ body{
     position:relative;
     flex-direction: column;
     border-radius: 30px;
-    background-color: #F5F5F5;
+    background-color: var(--box-color);
     width: 30vw;
-    height:70vh;
-    padding: 3vh 3vw;
+    height:65vh;
+    padding: 5vh 3vw;
     margin: 5vh 0;
 
-    row-gap: 5vh;
+    row-gap: 2vh;
     font-size: 20px;
+
+    box-shadow: 0 5px 10px var(--gray);
 }
 
 .date{
@@ -137,8 +149,8 @@ body{
     align-items: center;
     
     border-radius: 100%;
-    border: none;
-    background-color: var(--yellow);
+    border: 4px solid var(--accent-orange);
+    background-color: var(--box-color);
 
     padding: 5vh;
     margin: 5vw;
@@ -146,14 +158,14 @@ body{
     row-gap: 10px;
     width:50px;
     height:50px;
-
-    font-weight: 800;
-    font-size: 40px;
     transition: all 1s ease;
+
+    box-shadow: 0 5px 10px var(--gray);
 }
 #add-moment a{
+    font-size: 30px;
     text-decoration: none;
-    color:black;
+    color:var(--accent-orange);
 }
 #add-moment:hover{
     transform: scale(1.3);
@@ -280,9 +292,9 @@ input.episode{
     align-items: center;
 
     place-self: center;
-
-    background-color: var(--orange);
-    border:none;
+    color: var(--accent-orange);
+    background-color: var(--box-color);
+    border:3px solid var(--accent-orange);
     border-radius: 30px;
 
     height:50px;
@@ -290,13 +302,13 @@ input.episode{
     padding:20px;
 
     font-size: 25px;
-    color: black;
     cursor:pointer;
     transition: all 1s ease;
     font-weight:500;
 }
 #post-button:hover{
-    background-color:var(--dark-orange);
+    border-color:var(--accent-green);
+    color:var(--accent-green)
 }
 #pending-form{
     visibility:hidden;

@@ -26,7 +26,7 @@ function userStarReview(n){
     resetStarReview();
     console.log(stars[n]);
     for (let x = 5-n; x >=0; x ++){
-        stars[x].style.color = "#fbc36e";            //style is not translating well to node 
+        stars[x].style.color = "#FFCD91";            //style is not translating well to node 
     }
 }
 form.addEventListener("submit", function(event){
@@ -78,7 +78,7 @@ function removeShow(cellObj){
 }
 
 function resetStarReview(){
-    stars.forEach(i=>{i.style.color = "#c1c1c1"});
+    stars.forEach(i=>{i.style.color = "#c1c1c19b"});
 }
 
 // const favListElements = favList.querySelectorAll("li");

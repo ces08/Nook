@@ -20,7 +20,7 @@
             <ul id = "tabs">
                 <li id = "watch-tab" class = "active" onclick = "tabClicked(this,1)"> To Watch </li>
                 <li id = "inprog-tab" onclick = "tabClicked(this,2)"> In Progress </li>
-                <li id = "music-tab" onclick = "tabClicked(this,3)"> OPs </li>
+                <li id = "music-tab" onclick = "tabClicked(this,3)"> OSTs </li>
             </ul>
                 <div id = "tab-container" class = 'tab-body'>
                     <div id = 'towatch-container' class = 'checklist active'>
@@ -78,7 +78,7 @@
                                 </li>        
                         </ul>
                         <ul class = 'add'>
-                            <li> <input id = "add-bullet-watch" class = 'add-bullet title' type = "text" placeholder = "Add a new show" >
+                            <li> <input id = "add-bullet-watch" class = 'add-bullet' type = "text" placeholder = "Add a new show" >
                                 <div class = 'tags draft'>
                                     <input id = 'add-tags'type = 'text' list = 'genres'placeholder="(Enter Genre)">
                                     <datalist id="genres">
@@ -102,25 +102,37 @@
                     <div id = 'inprog-container' class = "checklist">
                         <ul id = "inprog-list" class = 'mainCheckList'>
                             <li>
-                                <div class = 'title' onclick = "removeProgShow(this)">Apothecary Diaries</div>
-                                <input class = 'post-checkbox' type = 'checkbox' disabled = 'disabled'>
-                            </li>
-                            <li>
-                                <div class = 'title' onclick = "removeProgShow(this)">Kaiju No. 9</div>
-                                <input class = 'post-checkbox' type = 'checkbox' disabled = 'disabled'>
-                            </li>
-                            <li>
-                                <div class = 'title' onclick = "removeProgShow(this)">Nyon Nyon Byori</div>
-                                <input class = 'post-checkbox' type = 'checkbox' disabled = 'disabled'>
-                            </li>
-                            <li>
-                                <div class = 'title' onclick = "removeProgShow(this)">Hibike Euphonium</div>
+                                <div class = 'title' onclick = "removeProgShow(this,'cardcaptorsakura.jpg')">Cardcaptor Sakura</div>
                                 <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
-                            </li>           
+                            </li>
+                            <li>
+                                <div class = 'title' onclick = "removeProgShow(this,'frieren.jpg')">Frieren</div>
+                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                            </li>
+                            <li>
+                                <div class = 'title' onclick = "removeProgShow(this, 'windbreaker.jpg')">Wind Breaker</div>
+                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                            </li>
+                            <li>
+                                <div class = 'title' onclick = "removeProgShow(this, 'nonnonbyori.jpg')">Non Non Byori</div>
+                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                            </li>    
+                            <li>
+                                <div class = 'title' onclick = "removeProgShow(this, 'oshinoko.jpg')">Oshi no Ko</div>
+                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                            </li>  
+                            <li>
+                                <div class = 'title' onclick = "removeProgShow(this, 'snow-white.jpg')">Snow White with the Red Hair</div>
+                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                            </li>         
                         </ul>
                         <ul class = 'add'>
                             <li><input id = "add-bullet-prog" class = 'add-bullet' type = "text" placeholder = "Add a show in progress">
-                                <input class = 'post-checkbox' type = 'checkbox'>
+                                <input id = 'add-prog-img' type = 'file' accept= "image/png, image/jpg, image/jpeg">
+                                <label for = 'add-prog-img' id = 'img-upload'>Upload Img
+                                    <span  id= 'tooltip' data-img = 'No file'></span>
+                                </label>
+                                <input id = 'prog-check' class = 'post-checkbox add-check' type = 'checkbox'>
                             </li>
                         </ul>
                     </div>
@@ -128,29 +140,39 @@
                         <ul id = "music-list" class = 'mainCheckList'>
                             <li>
                                 <div class = 'title' onclick = "removeMusic(this)"> Suzume OP</div>
-                                <div class = 'ytURL'>https://www.youtube.com/watch?v=Xs0Lxif1u9E&ab_channel=RADWIMPS</div>
+                                <div class = 'ytURL'>Xs0Lxif1u9E</div>
                                 <input class = 'post-checkbox' type = 'checkbox' disabled = 'disabled'>
                             </li>
                             <li>
                                 <div class = 'title' onclick = "removeMusic(this)">Blue Bird (Naruto OP 6) </div>
-                                <div class = 'ytURL'>https://www.youtube.com/watch?v=N9LgkGBeQAc&ab_channel=Telemetrist</div>
+                                <div class = 'ytURL'>N9LgkGBeQAc</div>
                                 <input class = 'post-checkbox' type = 'checkbox' disabled = 'disabled'>
                             </li>
                             <li>
-                                <div class = 'title' onclick = "removeMusic(this)">Oshi no Ko OP 2</div> 
-                                <div class = 'ytURL'>https://www.youtube.com/watch?v=PgBvV9ofjmA</div>
+                                <div class = 'title' onclick = "removeMusic(this,'PgBvV9ofjmA')">Oshi no Ko OP 2</div> 
+                                <div class = 'ytURL'>PgBvV9ofjmA</div>
                                 <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
                             </li>
                             <li>
-                                <div class = 'title' onclick = "removeMusic(this)">Hibike, Euphonium! OP 3</div>
-                                <div class = 'ytURL'>https://www.youtube.com/watch?v=ED66vOZg9t4&ab_channel=Crunchyroll</div>
+                                <div class = 'title' onclick = "removeMusic(this,'ED66vOZg9t4')">Hibike, Euphonium! OP 3</div>
+                                <div class = 'ytURL'>ED66vOZg9t4</div>
                                 <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
-                            </li>           
+                            </li>
+                            <li>
+                                <div class = 'title' onclick = "removeMusic(this,'hPmuITfvbYM')">Blue Lock OP 2</div>
+                                <div class = 'ytURL'>hPmuITfvbYM</div>
+                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                            </li> 
+                            <li>
+                                <div class = 'title' onclick = "removeMusic(this,'gcgKUcJKxIs')">JJK OP 0</div>
+                                <div class = 'ytURL'>gcgKUcJKxIs</div>
+                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                            </li>               
                         </ul>
                         <ul class = 'add'>
-                            <li><input id = "add-bullet-music" class = 'add-bullet' type = "text" placeholder = "Add a show in progress">
+                            <li><input id = "add-bullet-music" class = 'add-bullet' type = "text" placeholder = "Add an OST">
                                 <input id = "add-url" placeholder = "YT URL" type = 'text'> 
-                                <input id = 'add-check' class = 'post-checkbox' type = 'checkbox'>
+                                <input id = 'music-check' class = 'post-checkbox add-check' type = 'checkbox'>
                             </li>
                         </ul>
                     </div>
@@ -174,12 +196,8 @@
                             <div class = 'prog-title'>WIND BREAKER</div>
                         </div>
                         <div class = 'prog-widget'>
-                            <img src = 'imgs/aot.webp'>
-                            <div class = 'prog-title'>ATTACK ON TITAN</div>
-                        </div>
-                        <div class = 'prog-widget'>
-                            <img src = 'imgs/blackbutler.png'>
-                            <div class = 'prog-title'>BLACK BUTLER</div>
+                            <img src = 'imgs/nonnonbyori.jpg'>
+                            <div class = 'prog-title'>NON NON BYORI</div>
                         </div>
                         <div class = 'prog-widget'>
                             <img src = 'imgs/oshinoko.jpg'>
@@ -189,19 +207,15 @@
                             <img src = 'imgs/snow-white.jpg'>
                             <div class = 'prog-title'>AKAGAMI NO SHIRAYUKI</div>
                         </div>
-                        <div class = 'prog-widget'>
-                            <img src = 'imgs/snow-white.jpg'>
-                            <div class = 'prog-title'>AKAGAMI NO SHIRAYUKI</div>
-                        </div>
                     </div>
                 </div>
             <div class = 'right-container' id = 'vid-container'>
-                <div class = 'right-tab' id = 'vid-tab'>OPs</div>
+                <div class = 'right-tab' id = 'vid-tab'>OSTs</div>
                 <div class = 'right-box' id = 'vid-box'>
-                        <iframe class = 'vid' src="https://www.youtube.com/embed/PgBvV9ofjmA?si=YGtitiji0sPhwzbo"  frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <iframe class = 'vid' src="https://www.youtube.com/embed/ED66vOZg9t4?si=CBr2qmsnihf66psq" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <iframe class = 'vid' src="https://www.youtube.com/embed/hPmuITfvbYM?si=0ffuEnf9ffj3HSUM" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <iframe class = 'vid' src="https://www.youtube.com/embed/gcgKUcJKxIs?si=t51m1R69ByHUe1O6"frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe id = 'PgBvV9ofjmA' class = 'vid' src="https://www.youtube.com/embed/PgBvV9ofjmA?si=YGtitiji0sPhwzbo"  frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe id = 'ED66vOZg9t4' class = 'vid' src="https://www.youtube.com/embed/ED66vOZg9t4?si=CBr2qmsnihf66psq" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe id = 'hPmuITfvbYM' class = 'vid' src="https://www.youtube.com/embed/hPmuITfvbYM?si=0ffuEnf9ffj3HSUM" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe id = 'gcgKUcJKxIs' class = 'vid' src="https://www.youtube.com/embed/gcgKUcJKxIs?si=t51m1R69ByHUe1O6"frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
