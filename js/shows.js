@@ -30,7 +30,7 @@ function userStarReview(n){
     }
 }
 form.addEventListener("submit", function(event){
-    event.preventDefault() //prevents inputs from disappearing -- test 
+    event.preventDefault(); //prevents inputs from disappearing -- test 
     var showTitle = document.getElementById('title').value;
     var showNotes = document.getElementById('note').value;
 

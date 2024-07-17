@@ -87,87 +87,79 @@ tagInput.addEventListener("keyup", function(event){
 })
 
 const progCheck = document.getElementById('prog-check');
+const progForm = document.getElementById('add-prog-form');
 const imgUpload = document.getElementById('add-prog-img');
 const imgUploadBtn = document.getElementById('img-upload')
-const progArr = ['cardcaptorsakura.jpg','frieren.jpg','windbreaker.jpg','nonnonbyori.jpg','oshinoko.jpg','snow-white.jpg'];
-
-addBulletProg.addEventListener("keyup", function(event){
-    if (event.key === "Enter"){
-        const imgToPost = imgUpload.value;
-        console.log(imgToPost);
-        const progTitle = addBulletProg.value;
-        const checked = progCheck.checked;
-        progList.innerHTML += `
-        <li>
-            <div class = 'title' onclick = "removeProgShow(this,${imgToPost})">${progTitle}
-            <input class = 'post-checkbox' type = 'checkbox' ${checked? `checked`:``} disabled = 'disabled'>
-        </li>`
-        if (checked){
-            progArr.push(imgToPost);
-            addProgGallery(imgToPost,progTitle);
-        }
-    }
-})
 
 const progGallery = document.getElementById('prog-box');
 
-function addProgGallery(imgURL, title){
-    console.log('add');
-    progGallery.innerHTML += 
-    `
-    <div class = 'prog-widget'>
-        <img src = '${imgURL}'>
-         <div class = 'prog-title'>${title}</div>
-    </div>
-    `
-}
-
 const toolTip = document.getElementById("tooltip");
+var imgURL = '';
 imgUpload.addEventListener("change", function(){
     const importingImg = this.files[0];
     const reader = new FileReader();
     reader.onload = () =>{          //if file is read successfully....
-        const imgURL = reader.result;   //returns file contents
-        const insertedImg = document.createElement('img'); //creates HTML img element 
-        insertedImg.src = imgURL;   //image's link is the url returned by file content
-        console.log(insertedImg);
-        insertedImg.id = "uploaded-img";
-        imgUploadBtn.classList.add("active"); //add the "active" class when we add an image
+        imgURL = reader.result;   //returns file contents
         toolTip.dataset.img = importingImg.name;   //the uploadName variable = name of imported image
-        console.log(importingImg.name);
-
     }
     reader.readAsDataURL(importingImg);
 })
 
 
+progForm.addEventListener("submit", function(event){
+    event.preventDefault();
+    const progTitle = addBulletProg.value;
+    const progTitleEdited = progTitle.toLowerCase().replace(/\s+/g,'');
+    const imgSubmitted = (imgUpload.files.length != 0);
+    progList.innerHTML += `
+    <li>
+        <div class = 'title' onclick = "removeProgShow(this,'${progTitleEdited}')">${progTitle}
+        <input class = 'post-checkbox' type = 'checkbox' ${imgSubmitted? `checked`:``} disabled = 'disabled'>
+    </li>`
+    if (imgSubmitted){
+        addProgGallery(imgURL,progTitle);
+    }
+})
+
+function addProgGallery(imgURL, title){
+    progGallery.innerHTML += 
+    `
+    <div class = 'prog-widget'>
+        <img src = '${imgURL}'>
+         <div id = ${title} class = 'prog-title'>${title.toUpperCase()}</div>
+    </div>
+    `
+    document.getElementById(title).scrollIntoView({behavior: "smooth",block: 'nearest'});
+
+}
 const addURL = document.getElementById("add-url");
 const musicCheck = document.getElementById("music-check");
-const musicArr = ['PgBvV9ofjmA', 'ED66vOZg9t4'];
-
+const musicForm = document.getElementById("add-music-form");
 const checkboxes = document.querySelectorAll('input[type = checkbox]');
-addBulletMusic.addEventListener("keyup", function(event){
-    if (event.key === "Enter"){
-        const postBool = musicCheck.checked;
-        const ytURL = addURL.value;
-
-        const startIdx = ytURL.indexOf('watch?v=')+8;
-        const endIdx = ytURL.indexOf('&ab_channel');
+musicForm.addEventListener("submit", function(event){
+    event.preventDefault();
+    const ytURL = addURL.value;
+    const urlSubmitted = (ytURL.length!=0);
+    console.log(urlSubmitted);
+    const startIdx = ytURL.indexOf('watch?v=')+8;
+    const endIdx = ytURL.indexOf('&ab_channel');
+    if (urlSubmitted && !ytURL.includes('youtube.com/watch?v=')){
+        alert("Invalid Youtube URL. Please copy the exact URL");
+    }
+    else{
         const urlID = ytURL.substring(startIdx,endIdx);
 
         musicList.innerHTML += `
         <li>
             <div class = 'title' onclick = "removeMusic(this, '${urlID}')">${addBulletMusic.value}</div>
             <div class = 'ytURL'>${urlID}</div>
-            <input class = 'post-checkbox' type = 'checkbox' ${postBool?`checked`:``} disabled = 'disabled'>
+            <input class = 'post-checkbox' type = 'checkbox' ${urlSubmitted?`checked`:``} disabled = 'disabled'>
         </li>`
-        if (postBool){
-            musicArr.push(urlID);
+        if (urlSubmitted){
             addMusic(urlID);
         }
     }
 })
-
 const vidBox = document.getElementById('vid-box');
 
 function addMusic(urlID){
@@ -176,6 +168,8 @@ function addMusic(urlID){
     `<iframe id = '${urlID}' class = 'vid' src="https://www.youtube.com/embed/${urlID}?"  
     frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; 
     web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+    document.getElementById(urlID).scrollIntoView({behavior: "smooth",block: 'nearest'});
+
 }
 
 
@@ -183,12 +177,17 @@ function addMusic(urlID){
 function removeWatchShow(e){
     e.parentElement.remove();
 }
-function removeProgShow(e){
+function removeProgShow(e, progTitle){
     e.parentElement.remove();
+    if (progTitle!= null){
+        document.getElementById(progTitle).parentElement.remove();
+    }
 }
+// function removeProgShow(e){
+//     e.parentElement.remove();
+// }
 function removeMusic(e, urlID){
     e.parentElement.remove();
-    console.log(document.getElementById('PgBvV9ofjmA'));
     document.getElementById(urlID).remove();
 }
 

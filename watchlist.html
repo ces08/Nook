@@ -102,38 +102,39 @@
                     <div id = 'inprog-container' class = "checklist">
                         <ul id = "inprog-list" class = 'mainCheckList'>
                             <li>
-                                <div class = 'title' onclick = "removeProgShow(this,'cardcaptorsakura.jpg')">Cardcaptor Sakura</div>
+                                <div class = 'title' onclick = "removeProgShow(this,'cardcaptorsakura')">Cardcaptor Sakura</div>
                                 <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
                             </li>
                             <li>
-                                <div class = 'title' onclick = "removeProgShow(this,'frieren.jpg')">Frieren</div>
+                                <div class = 'title' onclick = "removeProgShow(this,'frieren')">Frieren</div>
                                 <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
                             </li>
                             <li>
-                                <div class = 'title' onclick = "removeProgShow(this, 'windbreaker.jpg')">Wind Breaker</div>
+                                <div class = 'title' onclick = "removeProgShow(this, 'windbreaker')">Wind Breaker</div>
                                 <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
                             </li>
                             <li>
-                                <div class = 'title' onclick = "removeProgShow(this, 'nonnonbyori.jpg')">Non Non Byori</div>
+                                <div class = 'title' onclick = "removeProgShow(this, 'nononbyori')">Non Non Byori</div>
                                 <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
                             </li>    
                             <li>
-                                <div class = 'title' onclick = "removeProgShow(this, 'oshinoko.jpg')">Oshi no Ko</div>
+                                <div class = 'title' onclick = "removeProgShow(this, 'oshinoko')">Oshi no Ko</div>
                                 <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
                             </li>  
                             <li>
-                                <div class = 'title' onclick = "removeProgShow(this, 'snow-white.jpg')">Snow White with the Red Hair</div>
+                                <div class = 'title' onclick = "removeProgShow(this, 'akagaminoshirayuki')">Akagami no Shirayuki</div>
                                 <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
                             </li>         
                         </ul>
                         <ul class = 'add'>
-                            <li><input id = "add-bullet-prog" class = 'add-bullet' type = "text" placeholder = "Add a show in progress">
+                            <li><form id = 'add-prog-form'>
+                                <input id = "add-bullet-prog" class = 'add-bullet' type = "text" placeholder = "Add a show in progress" required>
                                 <input id = 'add-prog-img' type = 'file' accept= "image/png, image/jpg, image/jpeg">
                                 <label for = 'add-prog-img' id = 'img-upload'>Upload Img
                                     <span  id= 'tooltip' data-img = 'No file'></span>
                                 </label>
-                                <input id = 'prog-check' class = 'post-checkbox add-check' type = 'checkbox'>
-                            </li>
+                                <button id = 'prog-check' class = 'post-checkbox add-check' type = 'submit'>
+                            </form></li>
                         </ul>
                     </div>
                     <div id = 'music-container' class = "checklist">
@@ -170,10 +171,11 @@
                             </li>               
                         </ul>
                         <ul class = 'add'>
-                            <li><input id = "add-bullet-music" class = 'add-bullet' type = "text" placeholder = "Add an OST">
+                            <li><form id = 'add-music-form'>
+                                <input id = "add-bullet-music" class = 'add-bullet' type = "text" placeholder = "Add an OST" required>
                                 <input id = "add-url" placeholder = "YT URL" type = 'text'> 
-                                <input id = 'music-check' class = 'post-checkbox add-check' type = 'checkbox'>
-                            </li>
+                                <button id = 'music-check' class = 'post-checkbox add-check' type = 'submit'>
+                            </form></li>
                         </ul>
                     </div>
                     
@@ -185,27 +187,27 @@
                 <div class = 'right-box' id = 'prog-box'>
                         <div class = 'prog-widget'>
                             <img src = 'imgs/cardcaptorsakura.jpg'>
-                            <div class = 'prog-title'>CARDCAPTOR SAKURA</div>
+                            <div id = 'cardcaptorsakura' class = 'prog-title'>CARDCAPTOR SAKURA</div>
                         </div>
                         <div class = 'prog-widget'>
                             <img src = 'imgs/frieren.jpg'>
-                            <div class = 'prog-title'>FRIEREN</div>
+                            <div id = 'frieren' class = 'prog-title'>FRIEREN</div>
                         </div>
                         <div class = 'prog-widget'>
                             <img src = 'imgs/windbreaker.jpg'>
-                            <div class = 'prog-title'>WIND BREAKER</div>
+                            <div id = 'windbreaker' class = 'prog-title'>WIND BREAKER</div>
                         </div>
                         <div class = 'prog-widget'>
                             <img src = 'imgs/nonnonbyori.jpg'>
-                            <div class = 'prog-title'>NON NON BYORI</div>
+                            <div id = 'nononbyori' class = 'prog-title'>NON NON BYORI</div>
                         </div>
                         <div class = 'prog-widget'>
                             <img src = 'imgs/oshinoko.jpg'>
-                            <div class = 'prog-title'>OSHI NO KO</div>
+                            <div id = 'oshinoko' class = 'prog-title'>OSHI NO KO</div>
                         </div>
                         <div class = 'prog-widget'>
                             <img src = 'imgs/snow-white.jpg'>
-                            <div class = 'prog-title'>AKAGAMI NO SHIRAYUKI</div>
+                            <div id = 'akagaminoshirayuki' class = 'prog-title'>AKAGAMI NO SHIRAYUKI</div>
                         </div>
                     </div>
                 </div>

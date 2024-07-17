@@ -40,6 +40,7 @@ function draftVisibility(){
 
 draftButton.addEventListener("click", function(){
     draftVisibility();
+    form.scrollIntoView({behavior: "smooth",block: 'nearest'});
 })
 
 const momentCounter = document.querySelectorAll(".moment-box.entry");

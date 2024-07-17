@@ -17,6 +17,7 @@
 
     --box-color: #FAFAFA;
     --accent-blue: #4DC2D8;
+    --accent-green: #6AC59C;
     --accent-orange:#FFA07A;
     --black:#333333;
 }
@@ -27,7 +28,7 @@ body{
     font-size:18px;
     margin: 0;
     overflow: hidden;
-    background-color: #F4F3F2;
+    background-color: #eeecea;
     color:var(--black);
 }
 
@@ -41,7 +42,7 @@ body{
     padding: 2vw 2vw;
 
     align-items: center;
-    background-color: rgba(244, 243, 242, 0.85);
+    background-color: rgba(238, 236, 234, 0.85);
     backdrop-filter: blur(8px);
     z-index:100;
 }
@@ -140,10 +141,6 @@ body{
     border-radius: 20px 20px 0 0;
     border-width: 3px 3px 0;
     background-color: var(--box-color);
-
-    box-shadow: 0 5px 10px var(--gray);
-
-
 }
 #prog-tab{
     width:30%;
@@ -174,8 +171,7 @@ body{
     color:var(--darker-gray);
 
     scroll-snap-align:start;
-    box-shadow: 0 5px 10px var(--gray);
-    box-shadow: 0 5px 10px #acb7ba;
+    box-shadow: 0 3px 7px #bac7cb;
 
 }
 
@@ -226,13 +222,14 @@ body{
     margin-bottom:0;
     font-size:20px;
     
-    background-color: #E9E4E3;
+    background-color: #F5F5F5;
     color:var(--dark-gray);
     border-radius: 15px 15px 0 0;
+    box-shadow: 0 5px 5px var(--gray);
 }
 
 #tabs li:hover{
-    background-color: #E6DDDC;
+    background-color: #f5f5f5bf;
     cursor:pointer;
 }
 
@@ -241,7 +238,6 @@ body{
     color:var(--accent-orange);
     font-weight: 500;
     box-shadow: 0 5px 10px var(--gray);
-
 }
 
 #tab-container{
@@ -294,6 +290,7 @@ body{
     display:none;
 }
 .post-checkbox{
+    margin:0;
     appearance:none;
     position:absolute;
     right:0;
@@ -303,20 +300,35 @@ body{
     border: 2px solid;
     border-radius: 5px;
 }
-
 .post-checkbox::after{
     font-family: "Font Awesome 5 Free";
     content:"\f00c";
     font-weight: 900;
-    display:none; 
+    display:block; 
     color:rgb(83, 188, 135);
 }
-.post-checkbox:checked::after{
-    display:block; 
-}
 .add-check{
+    width:50px;
+    height:30px;
+    background-color: var(--accent-blue);
+    border-color:var(--accent-blue);
     cursor:pointer;
+    box-shadow: 0 2px 5px var(--gray);
+    transition: all .5s;
 }
+.add-check::after{
+    text-align: center;
+    font-size:20px;
+    font-family: 'Font Awesome 5 Free';
+    content:"\f0d8";
+    color:white;
+    font-weight:900;
+}
+.add-check:hover{
+    border-color:var(--accent-green);
+    background-color: var(--accent-green) ;
+}
+
 #add-tags{
     border:none;
     font-size:14px;
@@ -335,7 +347,6 @@ input[type = 'file']{
     display:none;
 }
 #img-upload{
-    place-self: center;
     border: 2px solid var(--accent-orange);
     text-align: center;
     width:100px;
@@ -386,37 +397,37 @@ input[type = 'file']{
     visibility: visible;
 }
 .sports{
-    background-color:rgb(246, 150, 112);
+    background-color:#FEA377;
 }
 .action{
-    background-color:rgb(30, 150, 255);
+    background-color:#F88484;
 }
 .shonen{
-    background-color:rgb(108, 201, 232);
+    background-color:#57BBF4;
 }
 .fantasy{
-    background-color:rgb(83, 188, 135);
+    background-color:#7FD4D4;
 }
 .romance{
-    background-color:rgb(255, 108, 108);
+    background-color:#EC687F;
 }
 .isekai{
-    background-color:rgb(25, 204, 210);
+    background-color:#6CAA94;
 }
 .mystery{
-    background-color: rgb(159, 115, 248);
+    background-color: #8C7BF2;
 }
 .shoujo{
-    background-color: rgb(254, 167, 181);
+    background-color: #FBA7D4;
 }
 .sci-fi{
-    background-color:rgb(118, 213, 22);
+    background-color:#7FD271;
 }
 .comedy{
-    background-color:rgb(255, 204, 95) ;
+    background-color:#F6CA74 ;
 }
 .slice-of-life{
-    background-color: rgb(58, 83, 222);
+    background-color: #5D8DEB;
 }
 .checklist{
     display: none;
@@ -440,9 +451,9 @@ input[type = 'file']{
 
 .checklist li{
     display:flex;
+    position:relative;
     margin-bottom: 2vh;
     width:90%;
-    position:relative;
 }
 .title{
     cursor:pointer;
