@@ -78,7 +78,8 @@
                                 </li>        
                         </ul>
                         <ul class = 'add'>
-                            <li> <input id = "add-bullet-watch" class = 'add-bullet' type = "text" placeholder = "Add a new show" >
+                            <li><form id = 'add-to-watch'>
+                                <input id = "add-bullet-watch" class = 'add-bullet' type = "text" placeholder = "Add a new show" >
                                 <div class = 'tags draft'>
                                     <input id = 'add-tags'type = 'text' list = 'genres'placeholder="(Enter Genre)">
                                     <datalist id="genres">
@@ -96,34 +97,34 @@
         
                                     </datalist>
                                 </div>
-                            </li>
+                            </form></li>
                         </ul>
                     </div>
                     <div id = 'inprog-container' class = "checklist">
                         <ul id = "inprog-list" class = 'mainCheckList'>
                             <li>
                                 <div class = 'title' onclick = "removeProgShow(this,'cardcaptorsakura')">Cardcaptor Sakura</div>
-                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                                <input class = 'post-checkbox right-div' type = 'checkbox' checked disabled = 'disabled'>
                             </li>
                             <li>
                                 <div class = 'title' onclick = "removeProgShow(this,'frieren')">Frieren</div>
-                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                                <input class = 'post-checkbox right-div' type = 'checkbox' checked disabled = 'disabled'>
                             </li>
                             <li>
                                 <div class = 'title' onclick = "removeProgShow(this, 'windbreaker')">Wind Breaker</div>
-                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                                <input class = 'post-checkbox right-div' type = 'checkbox' checked disabled = 'disabled'>
                             </li>
                             <li>
                                 <div class = 'title' onclick = "removeProgShow(this, 'nononbyori')">Non Non Byori</div>
-                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                                <input class = 'post-checkbox right-div' type = 'checkbox' checked disabled = 'disabled'>
                             </li>    
                             <li>
                                 <div class = 'title' onclick = "removeProgShow(this, 'oshinoko')">Oshi no Ko</div>
-                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                                <input class = 'post-checkbox right-div' type = 'checkbox' checked disabled = 'disabled'>
                             </li>  
                             <li>
                                 <div class = 'title' onclick = "removeProgShow(this, 'akagaminoshirayuki')">Akagami no Shirayuki</div>
-                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                                <input class = 'post-checkbox right-div' type = 'checkbox' checked disabled = 'disabled'>
                             </li>         
                         </ul>
                         <ul class = 'add'>
@@ -133,7 +134,7 @@
                                 <label for = 'add-prog-img' id = 'img-upload'>Upload Img
                                     <span  id= 'tooltip' data-img = 'No file'></span>
                                 </label>
-                                <button id = 'prog-check' class = 'post-checkbox add-check' type = 'submit'>
+                                <button id = 'prog-check' class = 'add-check right-div' type = 'submit'>
                             </form></li>
                         </ul>
                     </div>
@@ -142,43 +143,42 @@
                             <li>
                                 <div class = 'title' onclick = "removeMusic(this)"> Suzume OP</div>
                                 <div class = 'ytURL'>Xs0Lxif1u9E</div>
-                                <input class = 'post-checkbox' type = 'checkbox' disabled = 'disabled'>
+                                <input class = 'post-checkbox right-div' type = 'checkbox' disabled = 'disabled'>
                             </li>
                             <li>
                                 <div class = 'title' onclick = "removeMusic(this)">Blue Bird (Naruto OP 6) </div>
                                 <div class = 'ytURL'>N9LgkGBeQAc</div>
-                                <input class = 'post-checkbox' type = 'checkbox' disabled = 'disabled'>
+                                <input class = 'post-checkbox right-div' type = 'checkbox' disabled = 'disabled'>
                             </li>
                             <li>
                                 <div class = 'title' onclick = "removeMusic(this,'PgBvV9ofjmA')">Oshi no Ko OP 2</div> 
                                 <div class = 'ytURL'>PgBvV9ofjmA</div>
-                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                                <input class = 'post-checkbox right-div' type = 'checkbox' checked disabled = 'disabled'>
                             </li>
                             <li>
                                 <div class = 'title' onclick = "removeMusic(this,'ED66vOZg9t4')">Hibike, Euphonium! OP 3</div>
                                 <div class = 'ytURL'>ED66vOZg9t4</div>
-                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                                <input class = 'post-checkbox right-div' type = 'checkbox' checked disabled = 'disabled'>
                             </li>
                             <li>
                                 <div class = 'title' onclick = "removeMusic(this,'hPmuITfvbYM')">Blue Lock OP 2</div>
                                 <div class = 'ytURL'>hPmuITfvbYM</div>
-                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                                <input class = 'post-checkbox right-div' type = 'checkbox' checked disabled = 'disabled'>
                             </li> 
                             <li>
                                 <div class = 'title' onclick = "removeMusic(this,'gcgKUcJKxIs')">JJK OP 0</div>
                                 <div class = 'ytURL'>gcgKUcJKxIs</div>
-                                <input class = 'post-checkbox' type = 'checkbox' checked disabled = 'disabled'>
+                                <input class = 'post-checkbox right-div' type = 'checkbox' checked disabled = 'disabled'>
                             </li>               
                         </ul>
                         <ul class = 'add'>
                             <li><form id = 'add-music-form'>
                                 <input id = "add-bullet-music" class = 'add-bullet' type = "text" placeholder = "Add an OST" required>
                                 <input id = "add-url" placeholder = "YT URL" type = 'text'> 
-                                <button id = 'music-check' class = 'post-checkbox add-check' type = 'submit'>
+                                <button id = 'music-check' class = 'add-check right-div' type = 'submit'>
                             </form></li>
                         </ul>
-                    </div>
-                    
+                    </div> 
                 </div>
         </div>
         <div id = 'right-panel'>

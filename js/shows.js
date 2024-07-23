@@ -53,7 +53,7 @@ function addShow(title, notes){
     }
     newRow.innerHTML += `
         <td><i class="fa-solid fa-x remove" onclick = "removeShow(this)"></i></td>
-        <td><div class = 'text'>${title}${favorite? `<img class = "heart-favorite" src = "svg/heart.svg"> </div>` : `</div>`}
+        <td><div class = 'text'>${title}${favorite? `<i class="fa-solid fa-heart"></i></div>` : `</div>`}
         
         <div class = 'tool-tip'><span>${title}(${numStars})</span><br>
             ${notes}

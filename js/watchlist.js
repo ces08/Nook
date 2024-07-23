@@ -103,6 +103,7 @@ imgUpload.addEventListener("change", function(){
         toolTip.dataset.img = importingImg.name;   //the uploadName variable = name of imported image
     }
     reader.readAsDataURL(importingImg);
+    imgUploadBtn.classList.add('active');
 })
 
 

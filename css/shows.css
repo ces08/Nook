@@ -2,13 +2,10 @@
 /* PROBLEM: media queries are not working as intended, tooltip is not perfectly aligned in all scenarios */
 *{
     --orange: #febda2;
-    --light-orange:#fef3e9;
     --dark-orange:#F59D78;
     --red: #e07878;
 
-    --light-yellow: #ffe3ba;
     --yellow: #FFCD91;
-    --dark-yellow: #fbc36e;
     --darker-gray:#5c5c5c;
     --dark-gray: #7a7a7a;
     --gray:#c1c1c19b;
@@ -26,7 +23,6 @@
 body{
     font-family: "Inter", sans-serif;
     height:100%;
-    font-size:18px;
     margin:0;
     overflow: hidden;
     background-color: #eeecea;
@@ -39,7 +35,7 @@ body{
     top:0;
     left:0;
     width:100%;
-    height: 5vh;
+    height:5vh;
     padding: 2vw 2vw;
 
     align-items: center;
@@ -49,8 +45,8 @@ body{
 
 }
 #navbar a{
-    padding: .5vh 1vw;
-    margin: 0 10px;
+    padding: .5vh 15px;
+    margin: 0 .5vw;
     text-align: center;
     font-size: 22px;
     color: var(--dark-gray);
@@ -72,43 +68,50 @@ body{
     position:relative;
     width:100%;
     height:100%;
-
     justify-content: center;
     margin: 12vh 0;
     padding: 2vh 0;
-}
-
-.show-box{
-    width:100%;
-    height:70vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding:5vh 2vw;
-    margin:0;
+    gap: 5vw;
 
 }
+
 #show-container{
     display: flex;
     justify-content: center;
 
-    position:relative;
-    width:50vw;
+    width:50%;
+    height:80vh;
     border-radius: 30px;
     background-color: var(--box-color);
     box-shadow: 0 5px 10px var(--gray);
+    
+}
+.show-box{
+    width:100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding:5vh 2vw;
+    margin:0;
+    position:relative;
+
 }
 #show-list{
+    table-layout: fixed;
+
     width:100%;
-    border:none;
+    font-size:18px;
+    border-spacing:0;
 }
 
 .text{
     position:relative;
-    width:30vw;
+    width:100%;
+
     overflow:hidden;
     text-overflow: ellipsis;
     white-space: nowrap; 
 }
+
 .tool-tip{
     position:sticky;
     margin:-300px;
@@ -127,18 +130,21 @@ body{
     visibility: visible;
 }
 #show-list tr{
-    display:flex;
-    align-items: center; 
-    height:5vh;
+    width:100%;
+    vertical-align: center; 
 }
 #show-list td:first-child{
+    width:30px;
+    text-align: right;
     font-size: 15px;
     color:var(--gray);
 }
 #show-list td:nth-child(2){
     display:flex;
+    height:5vh;
+    margin-left:.5vw;
+    justify-self: center;
     align-items: center;
-    width:30vw;
 }
 
 #show-list tr:hover{
@@ -157,7 +163,6 @@ body{
     font-size: 25px;
     gap: 6px;
 }
-
 .unchanging-stars{
     display: flex;
     justify-content: left;
@@ -170,24 +175,19 @@ body{
 #right-panel{
     display:flex;
     flex-direction: column;
+    justify-content: space-between;
     position:relative;
-
-    margin-left: 5vw;
 }
 
 .box-container{
+    display:flex;
     place-items: center;
+    flex-direction: column;
 }
 #box1.box-container{
-    display:flex;
-    flex-direction: column;
-    height:55%;
     justify-content: start;
 }
 #box2.box-container{
-    display:flex;
-    flex-direction: column;
-    height:45%;
     justify-content: end;    
 }
 .right-box{
@@ -207,10 +207,12 @@ body{
 
 #right-box1{
     height: 40vh;
+    min-height:300px;
     justify-content: center;
 }
 #right-box2{
     height: 30vh;
+    min-height:200px;
 }
 
 form{
@@ -243,7 +245,6 @@ textarea, input{
 
     background-color: transparent;
     border-color: var(--dark-gray);
-
 }
 
 textarea, input:focus{
@@ -263,22 +264,17 @@ textarea{
     color:var(--accent-orange);
     font-size: 24px;
     font-weight:500;
-
     padding: 5px 20px;
-    margin-bottom:-25px;
-    
+    margin-bottom:-20px;
     background-color: var(--box-color);
     border-radius: 30px;
+    border: 3px solid var(--accent-orange);
     
     outline: none;
-    border: 3px solid var(--accent-orange);
     z-index: 1;
     box-shadow: 0 1px 5px var(--gray);
 
-   
     transition: all 1s ease;
-    
-
 }
 #add{
     cursor:pointer;
@@ -294,11 +290,12 @@ button:hover{
     font-size: 16px;
 
     margin-top: 1vh;
-
 }
 #favorite button{
     padding:0;
     margin: 0 10px;
+    font-weight:600;
+
     background-color: transparent;
     border:none;
     cursor: pointer;
@@ -331,10 +328,9 @@ button:hover{
     color: var(--yellow);
 }
 
-.heart-favorite{
-    height:30px;
-    margin:0 5px ;
-    vertical-align: middle;
+.fa-heart{
+    color:var(--red);
+    margin-left: 5px;
 }
 
 #favorite-list{
@@ -356,258 +352,147 @@ button:hover{
 
 
 /* ---------------------------------------------------------------------------------------------------*/
-
-/* @media (min-width:800px){ */
-    @media(max-height: 730px){
-        body{
-            overflow-y: auto;
-        }
-        #big-box{
-            flex-direction: column;
-            align-items:center;
-            
-        }
-        #show-container{
-            margin: 2vh 0;
-            display: flex;
-            justify-content: center;
-            width:65vw;
-        }
-        #show-list{
-            width:100%;
-        }
-        .text{
-            width:40vw;
-        }
-        .show-box{
-            width:90%;
-        }
-
-        #right-panel{   
-            display:flex; 
-            flex-direction: row;
-            margin: 10vh 0;
-            gap:5vw;
-        }
-        #right-box1{
-            width:35vw;
-            height: 50vh;
-        }
-        #right-box2{
-            width:35vw;
-            height: 50vh;
-        }
-    }
-    @media(max-height:600px){
-        #right-panel{   
-            margin: 5vh 0 0;
-        }
-        .right-box{
-            padding: 5vh 0;
-        }
-    }
-    @media(max-height:500px){
-        #right-box1{
-            height: 60vh;
-        }
-        #right-box2{
-            height: 60vh;
-        }
-    }
-    @media(max-height:410px){
-        #right-box1{
-            height: 80vh;
-        }
-        #right-box2{
-            height: 80vh;
-        }
-    }
-/* } */
-
-/* xL */
-@media (min-width: 1600px){
-    #show-list{
-        font-size: 24px;
-    }
-
-    .stars{
-        font-size: 33px;
-        gap: 12px;
-    }
-    #show-list td:first-child{
-        font-size: 24px;
-    }
-    .right-box{
-        font-size: 24px;
-    }
-    label{
-        font-size: 24px;
+@media(max-height: 650px){
+    body{
+        overflow-y:auto;
     }
 }
-/* L */
-@media (max-width: 1224px){
-    #show-list{
-        font-size: 18px;
-    }
-    .text{
-        width:30vw;
-    }
-    .stars{
-        font-size: 22px;
+@media(max-height:560px){
+    #big-box{
+        margin: 20vh 0 0;
     }
 }
-
-@media (max-width: 1024px){
-   
-    .stars{
-        font-size: 20px;
-        gap: 5px;
+@media(max-height:280px){
+    #big-box{
+        margin: 30vh 0 0;
     }
-    .right-box{
-        font-size: 18px;
-    }
-    label{
-        font-size: 18px;
-    }
-    .text{
-        width:30vw;
-    }
-
 }
-
-/* s */
-@media(max-width:768px){ 
+@media (max-width: 1230px) {
+   #big-box{
+        gap: 2vw;
+   }
+    #show-container{
+        width: 60%;
+    }
+}
+@media(max-width: 1024px){
     body{
         overflow-y: auto;
     }
-    
-    #navbar a{
-        font-size: 22px;
-        padding: .5vh 2vw;
-        margin:0 5px;
-    }
-    #show-container{
-        width:85vw;
-    }
-    #show-list td:last-child{
-        width:10vw;
-    }
-    .stars{
-        font-size: 25px;
-        gap: 8px;
-    }
-    .text{
-        width:40vw;
-    }
-
     #big-box{
-        flex-direction: column;
+        margin-bottom:0;
         align-items: center;
-    }
-
-    #right-panel{    
-        margin-top: 10vh;
-        margin-left: 0;
-    }
-    .right-box{
-        width: 65vw;
-        margin-bottom: 5vh;
-        font-size: 20px;
+        flex-direction: column;
+        gap: 14vh;
+   }
+   #show-container{
+        width: 80%;
+   }
+   #right-panel{
+        gap:5vh;
+   }
+   .right-box{
+        width: 50vw;
     }
     #right-box1{
-        height: 50vh;
+        height: 45vh;
     }
-    #right-box2{
-        height: 40vh;
-    
+    #star-rating{
+        margin: 0 2px;
+        font-size: 30px;
     }
-    label{
-        font-size: 20px;
+}
+@media(max-width: 768px){
+    #show-container{
+        width: 90%;
     }
-    #favorite{
-        font-size: 18px;
+   #show-list{
+        font-size: 16px;
+   }
+   .right-box{
+        width: 70vw;
+    }
+   .unchanging-stars{
+        font-size: 22px;
+        gap: 2px;
+   }
+   #star-rating{
+        font-size: 25px;
+    }
+    @media(max-height: 620px){
+        #right-box1{
+            height: 60vh;
         }
-    .box-title{
-        font-size: 30px; 
+        #right-box2{
+            height:50vh;
+        }
     }
-   
+    @media(max-height: 450px){
+        #right-box1{
+            height: 80vh;
+        }
+        #right-box2{
+            height:70vh;
+        }
+    }
+    @media(max-height: 320px){
+        #right-box1{
+            height: 95vh;
+        }
+        #right-box2{
+            height:85vh;
+        }
+    }
+}
+@media(max-width: 675px){
 
 }
-/* xs */
-@media(max-width: 580px){
-
-    #favorite{
-        font-size: 16px;
-        }
-    .box-title{
-        font-size: 25px; 
-    }
-    .right-box{
-        width: 80vw;
-        font-size: 16px;
-    }
-
-    label{
-        font-size: 16px;
+@media(max-width: 535px){
+    .show-box{
+        padding:5vh 5vw;
     }
     .unchanging-stars{
-        display:none;
+        display: none;
     }
     .short-stars{
         display:flex;
-        font-size: 20px;
-    }
-
-    #show-list td:last-child{
-        width:5vw;
-    }
-    .text{
-        width:50vw;
-    }
-
-}
-
-@media(max-width: 425px){
-    #navbar a{
-        font-size: 20px;
-    }
-}
-
-@media(max-width: 375px){
-    #navbar a{
-        font-size:18px;
-    }
-    #show-list{
-        font-size:16px
-    }
-    #star-rating{
-        font-size: 23px;
-    }
-    .short-stars{
-        gap:2px;
-    }
-
-}
-
-@media(max-width: 320px){
-    #navbar a{
-        margin:0 2px;
-    }
-    .box-title{
-        font-size: 20px; 
-    }
-
-    .form-row:nth-child(2){
-        display: flex;
-        flex-direction: column;
-        line-height: 0;
-    }
-    #star-rating{
-        font-size: 20px;
-    }
-    .short-stars{
-        gap:2px;
+        justify-content: right;
         font-size: 18px;
     }
 }
+@media(max-width: 425px){
+    #navbar a{
+        padding: .5vh 2vw;
+        margin: 0 5px;
 
+        font-size: 18px;
+    }
+    .form-row:nth-child(2){
+        display:flex;
+        flex-direction: column;
+        line-height:0px;
+    }
+    label, input, textarea{
+        font-size: 16px;
+    }
+    #favorite-list{
+        font-size: 16px;
+    }
+}
+@media(max-width: 375px){
+    #navbar a{
+        margin: 0 1px;
+    }
+    #star-rating{
+        font-size: 20px;
+        margin: 0 2px;
+    }
+}
+@media(max-width: 325px){
+    #navbar a{
+        font-size: 16px;
+    }
+    #star-rating{
+        margin: 0;
+    }
+}

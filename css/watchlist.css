@@ -30,6 +30,7 @@ body{
     overflow: hidden;
     background-color: #eeecea;
     color:var(--black);
+    flex-shrink: 1 0;
 }
 
 #navbar {
@@ -68,25 +69,18 @@ body{
     display:flex;
     position:relative;
     width:100%;
-    min-height: 100%;
-
-    
     justify-content: center;
-    margin: 11vh 0;
+    margin: 12vh 0;
     padding: 2vh 0;
-}
 
+    gap: 5vw;
+}
 
 #watchlist-box{
     display:flex;
     flex-direction: column;
-
-    height:80vh;
-    width:35vw;
-    
+    width:35%;
     border-radius: 30px;
-
-    
 }
 
 .fa-xmark{
@@ -102,10 +96,9 @@ body{
 #right-panel{
     display:flex;
     flex-direction: column;
-    width:45vw;
+    width:45%;
     gap:5vh;
-    margin-left:5vw;
-
+    justify-content: space-between;
 }
 .right-container{
     display:flex;
@@ -128,8 +121,6 @@ body{
     scroll-padding-inline: 20px;
 
     box-shadow: 0 5px 10px var(--gray);
-
-
 }
 .right-tab{
     font-size:20px;
@@ -146,24 +137,27 @@ body{
     width:30%;
 }
 #prog-container{ 
-    height:45vh;
+    height:330px;
     text-align: left;    
 }
 
 #prog-box{
-    grid-auto-columns: 25%;
+    grid-auto-columns: 150px;
+    grid-auto-rows:90%;
 }
 
 .prog-widget{
     display:flex;
+
     flex-direction: column;   
     
     background-color: #e3ebed;
 
     border-radius: 15px;
     width:90%;
-    height:75%;
+    height:90%;
     
+    margin: auto 0;
     padding: 10px 10px 35px;
 
     font-weight: bold;
@@ -171,7 +165,7 @@ body{
     color:var(--darker-gray);
 
     scroll-snap-align:start;
-    box-shadow: 0 3px 7px #bac7cb;
+    box-shadow: inset 0 5px 10px #bac7cb;
 
 }
 
@@ -190,21 +184,20 @@ body{
     width:15%;
 }
 #vid-container{
-    height:30vh;
+    height:250px;
 }
 #vid-box{
     display:flex;
     align-items: center;
 }
 .vid{
-    inline-size: 17vw;
+    inline-size: 300px;
     aspect-ratio:16/9;
     border-radius:15px;
+    margin: auto 0;
     scroll-snap-align:start;
-    box-shadow: 0 5px 10px var(--gray);
-
+    box-shadow: inset 0 5px 10px var(--gray);
 }
-
 
 #tabs{
     margin:0;
@@ -241,6 +234,8 @@ body{
 }
 
 #tab-container{
+    display:flex;
+
     position:relative;
     height:100%;
     width:100%;
@@ -276,29 +271,29 @@ body{
     padding:2px 10px;
     margin-right:5px;
     border-radius: 30px;
-
 }
+
 .add-bullet{
-    margin:0;
+    margin-right:5px;
     width:200px;
 }
 #add-url{
-    margin-left: 5px;
     width:150px;
 }
 .ytURL{
     display:none;
 }
-.post-checkbox{
+.right-div{
     margin:0;
     appearance:none;
     position:absolute;
     right:0;
-    width:20px;
-    height:20px;
-
     border: 2px solid;
     border-radius: 5px;
+}
+.post-checkbox{
+    width:20px;
+    height:20px;
 }
 .post-checkbox::after{
     font-family: "Font Awesome 5 Free";
@@ -343,15 +338,19 @@ body{
     width:95%;
     margin-top: 0;
 }
+#add-to-watch{
+    display:flex;
+}
+
 input[type = 'file']{
     display:none;
 }
+
 #img-upload{
+    width:100px;
     border: 2px solid var(--accent-orange);
     text-align: center;
-    width:100px;
     padding:0 5px;
-    margin-left: 5px;
     cursor:pointer;
     border-radius:10px;
     color:var(--accent-orange);
@@ -433,12 +432,12 @@ input[type = 'file']{
     display: none;
         
     flex-direction: column;
-    align-items: start;
-    justify-content: center;
     width:100%;
 }
+
 .checklist.active{
     display: flex;
+    align-items: center;
 }
 
 .mainCheckList{
@@ -448,11 +447,10 @@ input[type = 'file']{
     overflow:hidden;
     overflow-wrap: break-word;
 }
-
 .checklist li{
     display:flex;
     position:relative;
-    margin-bottom: 2vh;
+    margin-bottom: 20px;
     width:90%;
 }
 .title{
@@ -480,148 +478,203 @@ input{
 input:focus{
     outline: none;
 }
+/*---------------------------------------------------------------------------------*/
 
-@media (min-width: 767px){
-    @media(max-height: 750px){
-        #big-box{
-            margin-top:13vh;
-        }
-    }
-    @media(max-height: 400px){
-        body{
-            font-size: 18px;
-        }
-        #big-box{
-            margin-top:15vh;
-            margin-bottom: 5vh;
-            font-size: 18px;
-        }
-        #search{
-            border-radius: 20px;
-            height:20px;
-            font-size: 18px;
-        }
-        .box-title{
-            font-size: 20px;
-        }
-    }
-    
-}
-/* xL */
-@media (max-width: 1824px){
-    
-}
-/* L */
-@media (max-width: 1224px){
-    
-    
-}
-/* m */
-@media (max-width: 1100px){
+@media(max-height:600px){
     body{
-        font-size: 18px;
+        overflow-y:auto;
+    }
+    #big-box{
+        margin:15vh 0;
+    }
+}
+@media(max-height:400px){
+    #big-box{
+        margin:20vh 0;
+    }
+}
+@media(max-height:300px){
+    #big-box{
+        margin:25vh 0;
+    }
+}
+
+@media (max-width: 1320px){
+    #watchlist-box{
+        width:40%;
     }
     #tabs li{
-        width: 35%;
-    }
-    .add-bullet{
-        font-size: 18px;
+        padding: 10px 20px;
     }
 }
-/* s */
-@media(max-width:768px){ 
+@media(min-width:1450px){
+    #big-box{
+        margin: 15vh 0;
+        background-color: blue;
+    }
+}    
+@media (max-width:1200px){
+    #prog-tab{
+        width:50%;
+    }
+    #vid-tab{
+        width:30%;
+    }
+    form{
+        display:flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .add-bullet{
+        width:250px;
+    }
+    #add-url{
+        width:250px;
+    }
+}
+@media(max-width: 1024px){
+    #big-box{
+        gap:2vw;
+    }
+    #watchlist-box{
+        width: 55%;
+    }
+    #right-panel{
+        width:35%;
+    }
+
+    #prog-tab{
+        width:60%;
+    }
+
+
+}
+@media(max-width:768px){
     body{
-        font-size: 16px;
+        font-size:16px;
+        overflow-y:auto;
     }
     #big-box{
         flex-direction: column;
         align-items: center;
-
+        gap: 12vh;
+        margin-bottom:0;
     }
     #watchlist-box{
-        display:flex;
-        flex-direction: column;
-    
-        height:80vh;
-        width:60vw;
-        margin-top:3vh;
-    }   
-    #tab-container{
-        padding: 3vh 1vw;
+        width:80%
     } 
-    #navbar{
-        top:0;
-        left:0;
-        width:100%;
-        height: 5vh;
-        padding: 2vw 2vw;
-        margin:0;
-
-        align-items: center;
-        background-color: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(8px);
-        z-index:100;
+    #tabs li{
+        font-size:16px;
     }
-    #watchlist-box{
-        display:flex;
-        flex-direction: column;
-    
-        height:80vh;
-        width:70vw;
-        margin-top:3vh;
-    }   
-    #tab-container{
-        padding: 3vh 1vw;
-    } 
-    #navbar a{
-        font-size: 22px;
-        padding: .5vh 2vw;
-        margin:0 5px;
+    .tags{
+        font-size: 14px;
     }
-    .waves{
-        background: none;
-    }
-    .checklist{
-        width:55vw;
-        max-width:55vw;
-    }
-    .add-bullet{
+    input{
         font-size: 16px;
     }
-
-}
-/* xs */
-@media(max-width: 425px){
-    body{
-        font-size: 14px;
-    }
-    #watchlist-box{
-        width:70vw;
-    }   
     .add-bullet{
-        font-size: 14px;
+        width:250px;
     }
-    
-    #navbar a{
-        font-size: 20px;
+    #add-url{
+        width:250px;
     }
-    
-}
 
-/* mobile M */
-@media(max-width: 375px){
+    #right-panel{
+        width: 80%;
+    }
+    .right-tab{
+        font-size:16px;
+    }
+    #prog-tab{
+        width:40%;
+    }
+}
+@media(max-width: 500px){
+    #watchlist-box{
+        width:90%;
+    }
+    #right-panel{
+        width:90%;
+    }
+}
+@media(max-width: 450px){
     #navbar a{
+        padding: .5vh 2vw;
+        margin: 0 5px;
+        font-size: 18px;
+    }
+    #prog-tab{
+        width:70%;
+    }
+    #tabs li{
+        padding: 5px 15px;
         font-size:18px;
     }
-}
-
-/* mobile S */
-@media(max-width: 320px){
-
-    #navbar a{
-        margin:0 2px;
+    .add-bullet{
+        width:200px;
     }
-    #watchlist-box{
-        width:80vw;
+    .add-check{
+        width:50px;
+    }
+    #add-url{
+        width:200px;
+    }
+
+}
+@media(max-width:375px){
+    #navbar a{
+        margin: 0 1px;
+    }
+    body{
+        font-size: 16px;
+    }
+    #tabs li{
+        padding: 5px 10px;
+        font-size:16px;
+    }  
+    input{
+        font-size:16px;
+    }
+    .add-bullet{
+        width:200px;
+    }
+    .add{
+        padding-left:20px;
+    }
+    #add-url{
+        width:150px;
+    }
+    .mainCheckList{
+        padding-left:20px;
+        list-style-position: inside;
+    }
+    #add-to-watch{
+        display:flex;
+        flex-direction: column;
+    }
+    .tags{
+        font-size: 11px;
+    }
+    .tags span{
+
+        padding:2px 10px;
+        margin-right:3px;
+    }
+    
+}
+@media(max-width:325px){
+    #navbar a{
+        font-size: 16px;
+    }
+    .add-bullet{
+        width:180px;
+    }
+    #tabs{
+        display:flex;
+        justify-content: space-between;
+    }  
+    #tab-container{
+        border-radius: 0 0 30px 30px;
     }
 }
