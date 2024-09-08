@@ -48,8 +48,8 @@ body{
     z-index:100;
 }
 #navbar a{
-    padding: .5vh 1vw;
-    margin: 0 10px;
+    padding: .5vh 15px;
+    margin: 0 .5vw;
     text-align: center;
     font-size: 22px;
     color: var(--dark-gray);
@@ -179,6 +179,7 @@ body{
 .prog-title{
     margin-top:5px;
     height:100%;
+    overflow-wrap: break-word;
 }
 #vid-tab{
     width:15%;
@@ -434,12 +435,10 @@ input[type = 'file']{
     flex-direction: column;
     width:100%;
 }
-
 .checklist.active{
     display: flex;
     align-items: center;
 }
-
 .mainCheckList{
     margin-bottom: 0;
     width:95%;

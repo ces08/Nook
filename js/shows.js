@@ -70,6 +70,7 @@ function addShow(title, notes){
         <li>${title}<\li>
         `
     }
+    newRow.scrollIntoView({behavior: "smooth",block: 'nearest'});
 }
 
 function removeShow(cellObj){
@@ -81,15 +82,15 @@ function resetStarReview(){
     stars.forEach(i=>{i.style.color = "#c1c1c19b"});
 }
 
-// const favListElements = favList.querySelectorAll("li");
+const favListElements = favList.querySelectorAll("li");
 
-// favList.addEventListener("click",function(e){
-//     const target = e.textContent;
-//     showTable.forEach(e=>{
-//         if (e.textContent.includes(target)){
-//             showTable.scroll(function(){
-//                 target.prop("scrollTop", this.scrollTop).prop("scrollLeft", this.scrollLeft);
-//             })
-//         }
-//     })
-// })
+favList.addEventListener("click",function(e){
+    console.log('start!');
+    const target = e.target.innerText;
+    for (var r = 0; r < showTable.rows.length; r++) {
+        if (showTable.rows[r].cells[1].innerText.includes(target)){
+            showTable.rows[r].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            console.log('done!');
+        }
+    }
+})

@@ -141,6 +141,7 @@ body{
 }
 #show-list td:nth-child(2){
     display:flex;
+    width:95%;
     height:5vh;
     margin-left:.5vw;
     justify-self: center;

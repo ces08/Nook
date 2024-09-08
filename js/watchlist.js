@@ -115,7 +115,7 @@ progForm.addEventListener("submit", function(event){
     progList.innerHTML += `
     <li>
         <div class = 'title' onclick = "removeProgShow(this,'${progTitleEdited}')">${progTitle}
-        <input class = 'post-checkbox' type = 'checkbox' ${imgSubmitted? `checked`:``} disabled = 'disabled'>
+        <input class = 'post-checkbox right-div' type = 'checkbox' ${imgSubmitted? `checked`:``} disabled = 'disabled'>
     </li>`
     if (imgSubmitted){
         addProgGallery(imgURL,progTitle);
@@ -123,11 +123,12 @@ progForm.addEventListener("submit", function(event){
 })
 
 function addProgGallery(imgURL, title){
+    const titleTBA = title.substr(0, 21);
     progGallery.innerHTML += 
     `
-    <div class = 'prog-widget'>
+    <div class = 'prog-widget' id = ${title}>
         <img src = '${imgURL}'>
-         <div id = ${title} class = 'prog-title'>${title.toUpperCase()}</div>
+         <div class = 'prog-title'>${titleTBA.toUpperCase()}</div>
     </div>
     `
     document.getElementById(title).scrollIntoView({behavior: "smooth",block: 'nearest'});
@@ -154,7 +155,7 @@ musicForm.addEventListener("submit", function(event){
         <li>
             <div class = 'title' onclick = "removeMusic(this, '${urlID}')">${addBulletMusic.value}</div>
             <div class = 'ytURL'>${urlID}</div>
-            <input class = 'post-checkbox' type = 'checkbox' ${urlSubmitted?`checked`:``} disabled = 'disabled'>
+            <input class = 'post-checkbox right-div' type = 'checkbox' ${urlSubmitted?`checked`:``} disabled = 'disabled'>
         </li>`
         if (urlSubmitted){
             addMusic(urlID);
@@ -180,13 +181,9 @@ function removeWatchShow(e){
 }
 function removeProgShow(e, progTitle){
     e.parentElement.remove();
-    if (progTitle!= null){
-        document.getElementById(progTitle).parentElement.remove();
-    }
+    document.getElementById(progTitle).parentElement.remove();
 }
-// function removeProgShow(e){
-//     e.parentElement.remove();
-// }
+
 function removeMusic(e, urlID){
     e.parentElement.remove();
     document.getElementById(urlID).remove();
