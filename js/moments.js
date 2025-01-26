@@ -80,6 +80,13 @@ form.addEventListener("submit", function(event){
         form.insertAdjacentHTML("beforebegin", startHTML + medHTML + endHTML);
         newIdx ++;
         console.log(newIdx);
+
+        if(importField.getElementsByTagName('img').length>0){
+            var imgs = importField.getElementsByTagName('img');
+            imgs[0].parentNode.removeChild(imgs[0]);
+        }
+        importField.classList.remove("active");
+        form.reset();
 })
 
 

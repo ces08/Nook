@@ -161,6 +161,7 @@ body{
     transition: all 1s ease;
 
     box-shadow: 0 5px 10px var(--gray);
+    z-index:10;
 }
 
 #add-moment:hover{
@@ -181,6 +182,7 @@ body{
     cursor: pointer;
     color:#e07878;
     right: 0;
+    top:0;
 
 }
 .fa-x:hover{
@@ -197,6 +199,7 @@ body{
     
     padding: 40px 0;
     width:100%;
+    height: 35%;
     
     color:#858585;
     font-weight:500;

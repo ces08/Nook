@@ -509,7 +509,6 @@ input:focus{
 @media(min-width:1450px){
     #big-box{
         margin: 15vh 0;
-        background-color: blue;
     }
 }    
 @media (max-width:1200px){

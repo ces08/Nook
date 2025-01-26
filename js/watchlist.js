@@ -143,13 +143,12 @@ musicForm.addEventListener("submit", function(event){
     const ytURL = addURL.value;
     const urlSubmitted = (ytURL.length!=0);
     console.log(urlSubmitted);
-    const startIdx = ytURL.indexOf('watch?v=')+8;
-    const endIdx = ytURL.indexOf('&ab_channel');
+    const startIdx = ytURL.indexOf("watch?v=") + 8;
     if (urlSubmitted && !ytURL.includes('youtube.com/watch?v=')){
         alert("Invalid Youtube URL. Please copy the exact URL");
     }
     else{
-        const urlID = ytURL.substring(startIdx,endIdx);
+        const urlID = ytURL.substring(startIdx);
 
         musicList.innerHTML += `
         <li>
