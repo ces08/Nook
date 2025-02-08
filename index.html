@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/b029c67e2c.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div id = 'bg'>
     <div id = 'navbar'>
         <a href = 'index.html'><i class="fa-solid fa-house"></i> </a>
         <a href = 'shows.html'>Shows</a>
@@ -16,28 +17,36 @@
     </div>
     <section id = 's1'>
         <div id = 'title-box'>
-            <div id = 'left-box'>
-                <h1>Welcome to Nook</h1>
-                <p>a cozy corner on the internet to record your show experiences.</p>
-                <!-- <a href = 'shows.html' id = 'start'>Start now</a> -->
-            </div>
-            <!-- <div id = 'right-box'>    -->
-                <!-- <div id = 'widget-box'>   
-                    <div class = 'data-widget' id = 'w1'>Keep track of your shows</div>   
-                    <div class = 'data-widget' id = 'w2'>Save favorite OSTs</div>
-                    <div class = 'data-widget' id = 'w3'>Write down your reviews</div>
-                    <div class = 'data-widget'  id = 'w4'>Record your thoughts on specific episodes</div>
-                </div>      -->
-            <!-- </div> -->
+                <img src = './imgs/nookLogo.png'>
+                <p><b>a cozy corner on the internet to record your show experiences</b></p>
+                <i class="fa-solid fa-chevron-down" onclick = 'scrollDown()'></i>            
         </div>
-
     </section>   
     <section id = 's2'>
-        <div id = 'left'></div>
-        <div id = 'right'>
-            
+        <div id = 'desc-container'>
+            <div class = 'desc-box'>
+                <i class="fa-solid fa-comment-dots"></i>
+                <div class = 'desc'>
+                    Rate and review all your shows for future reference
+                </div>
+            </div>
+            <div class = 'desc-box'>
+                <i class="fa-solid fa-file-pen"></i>
+                <div class = 'desc'>
+                    Track what you're watching, plan what's next, and save your favorite OSTs
+                </div>
+            </div>
+            <div class = 'desc-box'>
+                <i class="fa-solid fa-image"></i>
+                <div class = 'desc'>
+                    Capture and cherish your favorite moments with screenshots and notes
+                </div>
+            </div>
+        </div>
+        
         </div>
     </section> 
+</div>
     <script src = "js/index.js"></script>
     
 
