@@ -296,7 +296,7 @@ body{
     width:20px;
     height:20px;
 }
-.post-checkbox::after{
+.post-checkbox:checked::after{
     font-family: "Font Awesome 5 Free";
     content:"\f00c";
     font-weight: 900;

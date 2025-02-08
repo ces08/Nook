@@ -111,7 +111,8 @@ progForm.addEventListener("submit", function(event){
     event.preventDefault();
     const progTitle = addBulletProg.value;
     const progTitleEdited = progTitle.toLowerCase().replace(/\s+/g,'');
-    const imgSubmitted = (imgUpload.files.length != 0);
+    const imgSubmitted = imgURL != '';
+    console.log("IMG SUBMITTED: " + imgSubmitted);
     progList.innerHTML += `
     <li>
         <div class = 'title' onclick = "removeProgShow(this,'${progTitleEdited}')">${progTitle}
@@ -119,20 +120,26 @@ progForm.addEventListener("submit", function(event){
     </li>`
     if (imgSubmitted){
         addProgGallery(imgURL,progTitle);
+        importingImg = null;
+        imgURL = '';
+        toolTip.dataset.img = 'No file';
+        imgUploadBtn.classList.remove("active");
+        addBulletProg.value = "";
     }
 })
 
 function addProgGallery(imgURL, title){
-    const titleTBA = title.substr(0, 21);
+    const titleTBA = title.replace(/\s+/g, '').slice(0, 21);
     progGallery.innerHTML += 
     `
-    <div class = 'prog-widget' id = ${title}>
+    <div class = 'prog-widget'>
         <img src = '${imgURL}'>
-         <div class = 'prog-title'>${titleTBA.toUpperCase()}</div>
+        <div id = '${titleTBA}' class = 'prog-title'>${titleTBA.toUpperCase()}</div>
     </div>
     `
-    document.getElementById(title).scrollIntoView({behavior: "smooth",block: 'nearest'});
 
+    
+    document.getElementById(titleTBA).scrollIntoView({behavior: "smooth",block: 'nearest'});
 }
 const addURL = document.getElementById("add-url");
 const musicCheck = document.getElementById("music-check");
@@ -179,8 +186,12 @@ function removeWatchShow(e){
     e.parentElement.remove();
 }
 function removeProgShow(e, progTitle){
+    const widget =  document.getElementById(progTitle);
     e.parentElement.remove();
-    document.getElementById(progTitle).parentElement.remove();
+    if(widget){
+        widget.parentElement.remove();
+    }
+   
 }
 
 function removeMusic(e, urlID){
